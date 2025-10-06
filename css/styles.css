@@ -51,7 +51,7 @@ body {
     text-decoration: none;
 }
 
-.main-nav ul {
+.nav-links {
     list-style: none;
     display: flex;
     gap: 30px;
@@ -68,6 +68,15 @@ body {
 
 .main-nav a:hover, .main-nav a.active {
     color: var(--accent);
+}
+
+.hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
 /* --- Header --- */
@@ -225,11 +234,86 @@ h3, h4 {
 
 /* --- Responsive --- */
 @media (max-width: 768px) {
-    .main-nav {
-        flex-direction: column;
-        gap: 15px;
+    .container {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
     }
+
+    .main-nav {
+        padding: 15px 20px;
+        flex-wrap: wrap;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--background-light);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 20px 0;
+        gap: 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    .nav-links a {
+        font-size: 1.2rem;
+    }
+
+    .hero-header {
+        padding: 40px 20px;
+    }
+
+    .profile-pic img {
+        width: 120px;
+        height: 120px;
+    }
+
     .hero-header h1 {
-        font-size: 2.5em;
+        font-size: 2.2em;
+    }
+
+    .hero-header .subtitle {
+        font-size: 1em;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .pilar-item, .project-item, .puesto_de_trabajo {
+        padding: 20px;
+    }
+
+    .tech-icons img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .cta-button {
+        padding: 15px 25px;
+        font-size: 1rem;
+    }
+
+    .main-footer {
+        padding: 30px 20px;
     }
 }
