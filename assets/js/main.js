@@ -1,13 +1,41 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Hamburger Menu
     const hamburgerMenu = document.querySelector('.hamburger-menu');
-    const navLinks = document.querySelector('.nav-links');
+    const navLinksContainer = document.querySelector('.nav-links');
+    const navLinks = document.querySelectorAll('.nav-links a');
 
-    if (hamburgerMenu && navLinks) {
+    if (hamburgerMenu && navLinksContainer) {
         hamburgerMenu.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+            navLinksContainer.classList.toggle('active');
+        });
+
+        // Cerrar menú al hacer clic en un enlace (importante para Single Page)
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinksContainer.classList.remove('active');
+            });
         });
     }
+
+    // Scroll Suave y Actualización de Enlace Activo
+    const sections = document.querySelectorAll('section, header');
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (pageYOffset >= (sectionTop - 200)) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').includes(current)) {
+                link.classList.add('active');
+            }
+        });
+    });
 
     // Lightbox Gallery
     const galleryItems = document.querySelectorAll('.gallery-item');
