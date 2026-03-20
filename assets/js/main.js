@@ -19,7 +19,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Scroll Suave y Actualización de Enlace Activo
     const sections = document.querySelectorAll('section, header');
+    const progressBar = document.querySelector('.reading-progress-bar');
+
     window.addEventListener('scroll', () => {
+        // Update active link
         let current = '';
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
@@ -34,6 +37,43 @@ document.addEventListener('DOMContentLoaded', () => {
             if (link.getAttribute('href').includes(current)) {
                 link.classList.add('active');
             }
+        });
+
+        // Update reading progress bar
+        const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (window.scrollY / windowHeight) * 100;
+        if (progressBar) {
+            progressBar.style.width = scrolled + '%';
+        }
+    });
+
+    // 5. Scroll Reveal Animation
+    const revealElements = document.querySelectorAll('section, .project-card, .pilar-item, .puesto_de_trabajo, .reveal-hidden');
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    revealElements.forEach(el => {
+        // Solo añadimos la clase si no la tiene ya desde el HTML
+        if (!el.classList.contains('reveal-hidden')) {
+            el.classList.add('reveal-hidden');
+        }
+        revealObserver.observe(el);
+    });
+
+    // 6. Project Card Glow Effect
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
         });
     });
 

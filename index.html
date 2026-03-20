@@ -8,9 +8,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+    <div class="reading-progress-bar"></div>
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+    
     <nav class="main-nav">
         <div class="container nav-container">
-            <div class="profile-pic sidebar-pic">
+            <div class="sidebar-pic">
                 <img src="assets/img/profile/jonathan1.jpg" alt="Foto de perfil de Jonathan Medina">
             </div>
             <button class="hamburger-menu" aria-label="Toggle menu">
@@ -19,7 +23,9 @@
             <ul class="nav-links">
                 <li><a href="#inicio" class="active">Inicio</a></li>
                 <li><a href="#sobre-mi">Sobre Mí</a></li>
+                <li><a href="#experiencia">Experiencia</a></li>
                 <li><a href="#portafolio">Portafolio</a></li>
+                <li><a href="#viaje-imagenes">Galería</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
         </div>
@@ -32,120 +38,74 @@
             </div>
             <h1>Jonathan Medina</h1>
             <p class="subtitle">Uniendo Estrategia de Negocios con Soluciones Tecnológicas</p>
-            <p class="intro-text">Bienvenido a mi espacio digital. Aquí comparto mi viaje como futuro administrador que construye con tecnología, impulsado por una insaciable curiosidad y la pasión por resolver problemas complejos.</p>
+            <p class="intro-text">Bienvenido a mi espacio digital. Aquí comparto mi viaje como futuro administrador que construye con tecnología, impulsado por una pasión por resolver problemas complejos.</p>
             <a href="#sobre-mi" class="cta-button">Conoce mi historia</a>
         </div>
     </header>
 
     <main>
         <div class="container">
-            <!-- Sección Sobre Mí / Filosofía -->
+            <!-- Sección Sobre Mí -->
             <section id="sobre-mi">
-                <h2>Mi Filosofía: Estrategia y Código en Sinergia</h2>
+                <h2>Estrategia y Código en Sinergia</h2>
                 <div class="pilar-item">
-                    <p>Creo que las mejores soluciones no nacen solo del código, sino de una profunda comprensión del negocio. Mi perfil profesional se define por esta dualidad: soy un <strong>estratega con mentalidad de desarrollador</strong>.</p>
-                    <p style="margin-top: 20px;">Mi formación en <strong>Administración</strong> me permite entender el "porqué": optimizar recursos, definir objetivos claros y medir el impacto. Mi pasión como <strong>desarrollador autodidacta</strong>, con un enfoque en Python y Ciberseguridad, me da las herramientas para construir el "cómo": soluciones tecnológicas robustas, seguras y eficientes.</p>
-                    <p style="margin-top: 20px;">No me limito a resolver problemas; busco construir sistemas inteligentes. Mi experiencia en entornos corporativos y mi participación en eventos como el <strong>Hackathon de Google Cloud</strong> me han enseñado que la verdadera innovación ocurre cuando la tecnología sirve a una estrategia bien definida y centrada en las personas.</p>
-                    <p style="margin-top: 20px;"><strong>Mi objetivo es simple:</strong> liderar y construir la próxima generación de proyectos donde la tecnología no sea solo una herramienta, sino el motor de un crecimiento inteligente y con propósito.</p>
-                </div>
-            </section>
-
-            <!-- Sección Pilares -->
-            <section id="pilares">
-                <h2>Mis 3 Pilares</h2>
-                <div class="pilar-item">
-                    <h3>Administración y Estrategia 📈</h3>
-                    <p>Mi base académica para entender el panorama completo. Me especializo en la visión de negocio, la gestión de proyectos y la optimización de recursos para asegurar que cada solución tecnológica tenga un propósito claro y un impacto medible.</p>
-                </div>
-                <div class="pilar-item">
-                    <h3>Desarrollo y Tecnología 💻</h3>
-                    <p>Mi pasión por construir herramientas funcionales. Tengo experiencia práctica en la creación de soluciones con Python, JavaScript, HTML/CSS y hardware (Arduino), con un creciente interés y desarrollo en ciberseguridad y análisis de datos.</p>
-                </div>
-                <div class="pilar-item">
-                    <h3>Resolución de Problemas 🧠</h3>
-                    <p>Mi motor para nunca dejar de mejorar. Me impulsa un enfoque en el aprendizaje constante, la aplicación de la lógica y una mentalidad de crecimiento para superar desafíos complejos y encontrar oportunidades donde otros ven obstáculos.</p>
+                    <p>Soy un <strong>estratega con mentalidad de desarrollador</strong>. Mi formación en Administración me permite entender el "porqué" de los negocios, mientras que mi pasión por el desarrollo me da las herramientas para construir el "cómo".</p>
                 </div>
             </section>
 
             <!-- Sección Experiencia -->
             <section id="experiencia">
-                <h2>Experiencia Laboral</h2>
-                <div class="puesto_de_trabajo">
-                    <h4>Coordinador De Mesa De Control</h4>
-                    <p><strong>CASA LEY (Mayo 2023 - Jul 2023)</strong></p>
-                    <p style="margin-top: 10px;">Lideré la optimización del control de inventarios, validando la integridad de los datos y ejecutando ajustes precisos en el sistema para mejorar la eficiencia operativa.</p>
-                </div>
-                <div class="puesto_de_trabajo">
-                    <h4>Administrador Del SIRCA</h4>
-                    <p><strong>CASA LEY (Dic 2022 - May 2023)</strong></p>
-                    <p style="margin-top: 10px;">Gestioné estratégicamente el stock del sistema de abastecimiento y planograma de productos, implementando herramientas tecnológicas para el control de inventarios.</p>
+                <h2>Experiencia y Comunidad</h2>
+                <div class="experience-list">
+                    <div class="puesto_de_trabajo reveal-hidden">
+                        <div class="work-header">
+                            <h4>Hackathon Tiendanube</h4>
+                            <p><strong>Finalista (Septiembre 2025)</strong></p>
+                        </div>
+                        <div class="work-body">
+                            <p>Participación estratégica en la creación de soluciones para e-commerce, integrando APIs y mejorando la UX del usuario final.</p>
+                            <div class="work-evidence">
+                                <img src="assets/img/new/evidencia-Hackathon-Tiendanube.jpeg" alt="Evidencia en Hackathon" class="evidence-thumb">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="puesto_de_trabajo reveal-hidden">
+                        <div class="work-header">
+                            <h4>Coordinador De Mesa De Control</h4>
+                            <p><strong>CASA LEY (2023)</strong></p>
+                        </div>
+                        <div class="work-body">
+                            <p>Optimización de procesos operativos y control de inventarios mediante análisis de datos y gestión de sistemas.</p>
+                        </div>
+                    </div>
                 </div>
             </section>
 
             <!-- Sección Portafolio -->
             <section id="portafolio">
-                <h2>Mi Portafolio</h2>
+                <h2>Proyectos Destacados</h2>
                 <div class="portfolio-grid">
-                    <div class="project-card">
+                    <div class="project-card reveal-hidden">
                         <div class="project-image">
-                            <img src="assets/img/gallery/metascan.JPG" alt="Herramienta MetaScan">
+                            <img src="assets/img/new/LogoNubIA-Hackathon.jpeg" alt="Proyecto NubIA">
                         </div>
                         <div class="project-content">
-                            <p class="project-date">3 de octubre del 2025</p>
-                            <h3>MetaScan</h3>
-                            <p>Herramienta para ver la metadata de imágenes y realizar análisis forense utilizando Python.</p>
-                            <ul class="tech-list">
-                                <li>Python</li>
-                                <li>Ciberseguridad</li>
-                                <li>Análisis Forense</li>
-                            </ul>
+                            <p class="project-date">Hackathon 2025</p>
+                            <h3>Proyecto NubIA</h3>
+                            <p>Asistente inteligente diseñado para optimizar procesos de negocio mediante IA.</p>
                         </div>
                     </div>
-
-                    <div class="project-card">
+                    <div class="project-card reveal-hidden">
                         <div class="project-image">
-                            <img src="assets/img/gallery/hackathon.jpg" alt="Hackathon Creadores del Futuro Digital">
+                            <img src="assets/img/new/hackathon-googleCloud.jpeg" alt="Google Cloud Event">
                         </div>
                         <div class="project-content">
-                            <p class="project-date">9 al 26 de septiembre del 2025</p>
-                            <h3>Hackathon: "Creadores del Futuro Digital"</h3>
-                            <p>Participación en evento de Utel y Google Cloud para crear soluciones innovadoras, fortaleciendo el trabajo en equipo y la resolución de problemas.</p>
-                            <ul class="tech-list">
-                                <li>Google Cloud</li>
-                                <li>Metodologías Ágiles</li>
-                            </ul>
+                            <p class="project-date">Google Cloud + Utel</p>
+                            <h3>Cloud Innovators</h3>
+                            <p>Soluciones escalables en la nube para desafíos corporativos modernos.</p>
                         </div>
                     </div>
-
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="assets/img/gallery/prototipo-riego2.PNG" alt="Prototipo de Riego Inteligente">
-                        </div>
-                        <div class="project-content">
-                            <p class="project-date">12 de mayo del 2024</p>
-                            <h3>Riego Inteligente Sostenible 🌱</h3>
-                            <p>Sistema de bajo costo con hardware (Arduino) y software para promover la reforestación, con visión de negocio y escalabilidad.</p>
-                            <ul class="tech-list">
-                                <li>Arduino</li>
-                                <li>Sensores</li>
-                                <li>Hardware</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Sección Habilidades -->
-            <section id="habilidades">
-                <h2>Mis Herramientas</h2>
-                <div class="tech-icons">
-                    <img src="assets/img/ui/html-5.png" alt="Logo de HTML5">
-                    <img src="assets/img/ui/css-3.png" alt="Logo de CSS3">
-                    <img src="assets/img/ui/js.png" alt="Logo de JavaScript">
-                    <img src="assets/img/ui/Python.png" alt="Logo de Python">
-                    <img src="assets/img/ui/linux.png" alt="Logo de Linux">
-                    <img src="assets/img/ui/Arduino.png" alt="Logo de Arduino">
-                    <img src="assets/img/ui/codificacion.png" alt="Icono de codificación">
                 </div>
             </section>
 
@@ -154,28 +114,28 @@
                 <h2>Mi Viaje en Imágenes</h2>
                 <div class="image-gallery">
                     <div class="gallery-item">
-                        <img src="assets/img/gallery/cafe-galletas-laptop.jpg" alt="Ambiente de desarrollo con café y galletas">
-                        <p class="caption">Ambiente de desarrollo</p>
+                        <img src="assets/img/new/hackathon-tiendaNube.jpeg" alt="Hackathon Tiendanube">
+                        <p class="caption">Hackathon Tiendanube</p>
                     </div>
                     <div class="gallery-item">
-                        <img src="assets/img/gallery/reunion-codigo.jpg" alt="Reunión de equipo discutiendo código">
-                        <p class="caption">Colaboración y equipo</p>
+                        <img src="assets/img/new/asistenciaCodigoFest.jpg" alt="Asistencia CodigoFest">
+                        <p class="caption">Asistencia al CodigoFest</p>
                     </div>
                     <div class="gallery-item">
-                        <img src="assets/img/gallery/termo-grabado-codigo.jpg" alt="Termo personalizado con grabado de código">
-                        <p class="caption">La pasión está en los detalles</p>
+                        <img src="assets/img/new/CodigoFest-Codigofacilito.jpeg" alt="CodigoFest con CodigoFacilito">
+                        <p class="caption">Comunidad CodigoFacilito</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/img/new/reconocimiento-GoogleCloud-UTEL.jpeg" alt="Reconocimiento">
+                        <p class="caption">Reconocimiento Google Cloud</p>
                     </div>
                     <div class="gallery-item">
                         <img src="assets/img/gallery/arduino.jpg" alt="Arduino">
-                        <p class="caption">Mi primer robot con Arduino</p>
+                        <p class="caption">Hardware y Prototipado</p>
                     </div>
                     <div class="gallery-item">
-                        <img src="assets/img/gallery/prototipo-riego.jpg" alt="Prototipo de sistema de riego">
-                        <p class="caption">Prototipo de Riego Inteligente</p>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="assets/img/gallery/codigfacilito.jpg" alt="Certificado de Codigo Facilito">
-                        <p class="caption">Aprendizaje Continuo</p>
+                        <img src="assets/img/gallery/prototipo-riego.jpg" alt="Prototipo">
+                        <p class="caption">Ingeniería Aplicada</p>
                     </div>
                 </div>
             </section>
@@ -184,15 +144,15 @@
 
     <footer class="main-footer" id="contacto">
         <div class="container">
-            <h2>Contacto</h2>
+            <h2>Hablemos</h2>
             <div class="contact-info">
                 <p>Correo: <span>jonathan603015@gmail.com</span></p>
                 <p>Teléfono: <span>+52 668 225 3386</span></p>
             </div>
             <div class="social-links">
-                <a href="https://www.linkedin.com/in/jonathanmedinag0/" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
-                <a href="https://www.instagram.com/jhonathan270802/" aria-label="Instagram Profile"><i class="fab fa-instagram"></i></a>
-                <a href="https://github.com/jona943" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/jonathanmedinag0/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/jona943" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.instagram.com/jhonathan270802/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
     </footer>
