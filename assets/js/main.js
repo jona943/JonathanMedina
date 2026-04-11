@@ -124,4 +124,37 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // Carousel Logic
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(track ? track.children : []);
+    const dotsContainer = document.querySelector('.carousel-dots');
+    const dots = Array.from(dotsContainer ? dotsContainer.children : []);
+
+    if (track && slides.length > 0) {
+        let currentSlideIndex = 0;
+
+        const updateCarousel = (index) => {
+            const slideWidth = slides[0].getBoundingClientRect().width;
+            track.style.transform = `translateX(-${index * slideWidth}px)`;
+            
+            dots.forEach(dot => dot.classList.remove('active'));
+            if (dots[index]) dots[index].classList.add('active');
+            
+            currentSlideIndex = index;
+        };
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => updateCarousel(index));
+        });
+
+        // Auto-play (opcional)
+        setInterval(() => {
+            let nextIndex = (currentSlideIndex + 1) % slides.length;
+            updateCarousel(nextIndex);
+        }, 5000);
+
+        // Recalcular ancho al cambiar tamaño de ventana
+        window.addEventListener('resize', () => updateCarousel(currentSlideIndex));
+    }
 });
