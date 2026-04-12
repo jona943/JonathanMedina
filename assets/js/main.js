@@ -125,7 +125,45 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Carousel Logic
+    // Carousel Logic for Projects
+    const projectCarousels = document.querySelectorAll('.project-carousel');
+    
+    projectCarousels.forEach(carousel => {
+        const track = carousel.querySelector('.project-track');
+        const slides = Array.from(track ? track.children : []);
+        const dots = Array.from(carousel.querySelectorAll('.p-dot'));
+
+        if (track && slides.length > 1) {
+            let currentSlideIndex = 0;
+
+            const updateProjectCarousel = (index) => {
+                const slideWidth = slides[0].getBoundingClientRect().width;
+                track.style.transform = `translateX(-${index * slideWidth}px)`;
+                
+                dots.forEach(dot => dot.classList.remove('active'));
+                if (dots[index]) dots[index].classList.add('active');
+                
+                currentSlideIndex = index;
+            };
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => updateProjectCarousel(index));
+            });
+
+            // Optional: Auto-play for projects
+            setInterval(() => {
+                let nextIndex = (currentSlideIndex + 1) % slides.length;
+                updateProjectCarousel(nextIndex);
+            }, 6000 + (Math.random() * 2000)); // Variación para que no todos cambien a la vez
+
+            window.addEventListener('resize', () => updateProjectCarousel(currentSlideIndex));
+        } else if (dots.length > 0) {
+            // Si solo hay una imagen, ocultar los puntos si existen
+            dots.forEach(dot => dot.style.display = 'none');
+        }
+    });
+
+    // Main Certifications Carousel Logic
     const track = document.querySelector('.carousel-track');
     const slides = Array.from(track ? track.children : []);
     const dotsContainer = document.querySelector('.carousel-dots');
