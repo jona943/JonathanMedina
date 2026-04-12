@@ -16,8 +16,8 @@
 
 /* --- Global Reset & Base Styles --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { font-family: 'Inter', sans-serif; background-color: var(--bg-main); color: var(--text-secondary); line-height: 1.6; overflow-x: hidden; position: relative; }
+html { scroll-behavior: smooth; overflow-x: hidden; width: 100%; }
+body { font-family: 'Inter', sans-serif; background-color: var(--bg-main); color: var(--text-secondary); line-height: 1.6; overflow-x: hidden; position: relative; width: 100%; }
 h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; color: var(--text-primary); }
 .container { width: 100%; max-width: 1000px; margin: 0 auto; padding: 0 20px; }
 
