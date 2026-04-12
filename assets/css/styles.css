@@ -66,11 +66,81 @@ h2 { font-size: 2em; margin-bottom: 25px; text-align: center; }
 .work-evidence { width: 100%; max-width: 200px; }
 .evidence-thumb { width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); }
 
-/* --- Grid Structures --- */
-.portfolio-grid { display: grid; grid-template-columns: 1fr; gap: 30px; }
-.project-card { background: var(--bg-card); border-radius: 20px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.05); transition: var(--transition-smooth); display: flex; flex-direction: column; }
+/* --- Grid Structures (Main Projects Carousel) --- */
+.portfolio-wrapper { position: relative; width: 100%; display: flex; align-items: center; }
+
+.portfolio-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 20px;
+    gap: 20px;
+    padding: 20px 20px 40px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.portfolio-grid::-webkit-scrollbar { display: none; }
+
+.scroll-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-100%);
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 199, 177, 0.15);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 100;
+    backdrop-filter: blur(5px);
+    transition: var(--transition-smooth);
+    opacity: 0.6;
+}
+
+.scroll-arrow:hover { opacity: 1; background: var(--accent); color: var(--bg-main); box-shadow: 0 0 15px var(--accent); }
+.arrow-left { left: 5px; }
+.arrow-right { right: 5px; }
+
+@media (max-width: 768px) {
+    .scroll-arrow { width: 35px; height: 35px; opacity: 0.4; } /* Más sutiles en móvil */
+}
+
+.project-card {
+    width: calc(100vw - 80px); /* Ancho preciso: Pantalla menos márgenes laterales */
+    max-width: 400px; /* Evita que en tablets pequeñas sea gigante */
+    background: var(--bg-card);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: var(--transition-smooth);
+    display: flex;
+    flex-direction: column;
+    scroll-snap-align: center;
+    flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+    .project-card {
+        width: 380px; /* Ancho fijo para tablets y laptops */
+    }
+}
+
+@media (max-width: 480px) {
+    .project-carousel { height: 200px; } /* Reducimos altura de imagen en móviles pequeños */
+    .project-content h3 { font-size: 1.3rem; }
+    .project-content { padding: 15px; }
+}
+
 .project-card:hover { border-color: var(--accent); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 199, 177, 0.1); }
 
+/* --- Internal Project Image Carousel --- */
 .project-carousel { position: relative; width: 100%; height: 280px; overflow: hidden; background: #000; border-radius: 12px; margin: 15px 0; border: 1px solid rgba(255, 255, 255, 0.03); }
 .project-track { display: flex; height: 100%; transition: transform 0.5s ease-in-out; align-items: center; }
 .project-slide { min-width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, rgba(0, 199, 177, 0.05) 0%, transparent 70%); }
@@ -89,14 +159,6 @@ h2 { font-size: 2em; margin-bottom: 25px; text-align: center; }
 .repo-link { display: flex; align-items: center; gap: 8px; color: var(--text-primary); text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: var(--accent); }
 .repo-link:hover { color: var(--accent); }
 .repo-link i { font-size: 1.2rem; }
-
-@media (min-width: 768px) {
-    .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (min-width: 1024px) {
-    .portfolio-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
-}
 
 .image-gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
 .gallery-item { border-radius: 10px; overflow: hidden; aspect-ratio: 1/1; }

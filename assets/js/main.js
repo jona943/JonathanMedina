@@ -125,6 +125,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Portfolio Horizontal Scroll Arrows
+    const portfolioGrid = document.querySelector('.portfolio-grid');
+    const btnLeft = document.querySelector('.arrow-left');
+    const btnRight = document.querySelector('.arrow-right');
+
+    if (portfolioGrid && btnLeft && btnRight) {
+        btnLeft.addEventListener('click', () => {
+            const cardWidth = portfolioGrid.querySelector('.project-card').offsetWidth + 20;
+            portfolioGrid.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+        });
+
+        btnRight.addEventListener('click', () => {
+            const cardWidth = portfolioGrid.querySelector('.project-card').offsetWidth + 20;
+            portfolioGrid.scrollBy({ left: cardWidth, behavior: 'smooth' });
+        });
+    }
+
     // Carousel Logic for Projects
     const projectCarousels = document.querySelectorAll('.project-carousel');
     
@@ -150,11 +167,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 dot.addEventListener('click', () => updateProjectCarousel(index));
             });
 
-            // Optional: Auto-play for projects
-            setInterval(() => {
-                let nextIndex = (currentSlideIndex + 1) % slides.length;
-                updateProjectCarousel(nextIndex);
-            }, 6000 + (Math.random() * 2000)); // Variación para que no todos cambien a la vez
+            // Auto-play con función de pausa
+            let intervalId;
+            const startAutoPlay = () => {
+                intervalId = setInterval(() => {
+                    let nextIndex = (currentSlideIndex + 1) % slides.length;
+                    updateProjectCarousel(nextIndex);
+                }, 5000 + (Math.random() * 2000));
+            };
+
+            const stopAutoPlay = () => clearInterval(intervalId);
+
+            // Iniciar auto-play originalmente
+            startAutoPlay();
+
+            // Eventos para pausar (Mouse y Touch)
+            carousel.addEventListener('mousedown', stopAutoPlay);
+            carousel.addEventListener('touchstart', stopAutoPlay, { passive: true });
+
+            // Eventos para reanudar
+            carousel.addEventListener('mouseup', startAutoPlay);
+            carousel.addEventListener('mouseleave', startAutoPlay);
+            carousel.addEventListener('touchend', startAutoPlay);
 
             window.addEventListener('resize', () => updateProjectCarousel(currentSlideIndex));
         } else if (dots.length > 0) {
