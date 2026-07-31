@@ -396,15 +396,14 @@
                         <div class="project-card reveal-hidden">
                             <div class="project-content">
                                 <p class="project-date">Optimización - Linux & Kernel</p>
-                                <h3>Config-JM</h3>
+                                <h3>Config-JM (HP Laptop)</h3>
                                 <div class="project-carousel" data-project="configjm">
                                     <div class="project-track">
                                         <div class="project-slide"><img src="assets/img/EntornoDeDesarrollo/EntonoLaptop.png"
-                                                alt="Config-JM"></div>
+                                                alt="Config-JM HP Laptop"></div>
                                     </div>
                                 </div>
-                                <p>Repositorio personal de configuraciones de sistema, drivers de kernel y optimizaciones
-                                    para hardware de alto rendimiento bajo Linux.</p>
+                                <p>Repositorio personal de configuraciones de sistema, driver de Wi-Fi rtw88_8723de, perfiles de energía y optimización ZRAM bajo Ubuntu Server XFCE.</p>
                                 <div class="project-links">
                                     <a href="https://github.com/jona943/config-JM" target="_blank" class="repo-link">
                                         <i class="fab fa-github"></i> Ver Repositorio
@@ -486,38 +485,43 @@
 
             </section>
 
-            <!-- Sección Tech Setup (Dato Curioso) -->
+            <!-- Sección Tech Setup (Performance Lab: TV-Box Linux) -->
             <section id="tech-setup">
-                <h2>Performance Lab: Hardware & Optimización</h2>
+                <h2>Performance Lab: TV-Box Linux ARM64</h2>
                 <div class="tech-setup-container">
                     <div class="setup-image-wrapper">
-                        <img src="assets/img/EntornoDeDesarrollo/EntonoLaptop.png"
-                            alt="Mi Entorno de Desarrollo y Laptop">
+                        <div class="project-carousel" data-project="tvboxsetup">
+                            <div class="project-track">
+                                <div class="project-slide"><img src="assets/img/EntornoDeDesarrollo/armbian-tvbox.png" alt="TV-Box Linux Armbian CLI"></div>
+                                <div class="project-slide"><img src="assets/img/EntornoDeDesarrollo/htop-tvbox.png" alt="TV-Box Linux htop Monitoring"></div>
+                            </div>
+                            <div class="project-nav">
+                                <span class="p-dot active" data-index="0"></span>
+                                <span class="p-dot" data-index="1"></span>
+                            </div>
+                        </div>
                     </div>
                     <div class="specs-content">
                         <div class="specs-grid">
                             <div class="spec-item">
-                                <p class="spec-label">Laptop</p>
-                                <p class="spec-value">HP db0xxx (2018)</p>
+                                <p class="spec-label">Dispositivo</p>
+                                <p class="spec-value">TV Box Mortal T1</p>
                             </div>
                             <div class="spec-item">
-                                <p class="spec-label">CPU</p>
-                                <p class="spec-value">AMD A9-9425 (3.1 GHz)</p>
+                                <p class="spec-label">SoC / CPU</p>
+                                <p class="spec-value">Allwinner H313 (4 Cores)</p>
                             </div>
                             <div class="spec-item">
-                                <p class="spec-label">RAM</p>
-                                <p class="spec-value">12 GB + ZRAM Config.</p>
+                                <p class="spec-label">RAM Real</p>
+                                <p class="spec-value">1 GB (119 MB uso constante)</p>
                             </div>
                             <div class="spec-item">
-                                <p class="spec-label">OS</p>
-                                <p class="spec-value">Ubuntu Server (XFCE Minimal)</p>
+                                <p class="spec-label">OS Kernel</p>
+                                <p class="spec-value">Armbian Minimal (Kernel 6.12)</p>
                             </div>
                         </div>
                         <div class="optimization-note">
-                            <p><strong>Dato Curioso:</strong> En 2026, mi entorno vuela gracias a la optimización
-                                manual. He modificado el kernel para el driver <code>rtw88_8723de</code> (Wi-Fi),
-                                ajustado perfiles de energía para latencia mínima y configurado una interfaz gráfica
-                                ultra-ligera. Desarrollo e IA (Gemini CLI) sin comprometer el rendimiento.</p>
+                            <p><strong>Optimización de Kernel:</strong> Conversión de hardware comercial adulterado en servidor Linux. Compilación cruzada en PC Host del driver SDIO AIC8800, prevención de Kernel Panics mediante streaming directo por red con <code>oflag=direct</code> y flasheo síncrono a la eMMC interna desactivando el Page Cache.</p>
                         </div>
                     </div>
                 </div>
