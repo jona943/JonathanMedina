@@ -1,0 +1,71 @@
+.sidebar-profile-wrapper {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.sidebar-pic {
+    width: 140px;
+    height: 140px;
+    margin-bottom: 5px;
+    position: relative;
+}
+
+.sidebar-pic img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 2px solid var(--accent);
+    object-fit: cover;
+}
+
+.sidebar-pic::after {
+    content: "";
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+    border: 1px solid var(--accent);
+    border-radius: 50%;
+    opacity: 0.3;
+}
+
+.sidebar-name {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-top: 10px;
+}
+
+.sidebar-role {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-top: 2px;
+}
+
+.sidebar-socials {
+    display: flex;
+    gap: 15px;
+    margin-top: 12px;
+}
+
+.sidebar-socials a {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    transition: var(--transition-smooth);
+}
+
+.sidebar-socials a:hover {
+    color: var(--accent);
+    transform: translateY(-2px);
+}
+
+@media (min-width: 1024px) {
+    .sidebar-profile-wrapper {
+        display: flex;
+    }
+}

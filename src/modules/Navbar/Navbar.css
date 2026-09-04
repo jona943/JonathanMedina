@@ -37,7 +37,7 @@
     -webkit-backdrop-filter: blur(20px);
     padding: 30px 20px;
     text-align: center;
-    gap: 20px;
+    gap: 15px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     overflow-y: auto;
     z-index: 999;
@@ -47,20 +47,40 @@
     display: flex;
 }
 
-.nav-links a {
+.nav-item-link {
     color: var(--text-secondary);
     text-decoration: none;
     font-weight: 600;
     text-transform: uppercase;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     letter-spacing: 1px;
-    padding: 10px;
-    display: block;
+    padding: 10px 16px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: var(--transition-smooth);
 }
 
-.nav-links a:hover,
-.nav-links a.active {
+.nav-item-icon {
+    font-size: 1.1rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav-item-link:hover {
     color: var(--accent);
+    background: rgba(0, 199, 177, 0.05);
+}
+
+.nav-item-link:hover .nav-item-icon {
+    transform: scale(1.15);
+}
+
+.nav-item-link.active {
+    color: var(--accent);
+    background: rgba(0, 199, 177, 0.12);
+    border-left: 3px solid var(--accent);
 }
 
 .hamburger-menu {
@@ -73,16 +93,12 @@
     padding: 5px;
 }
 
-.sidebar-pic {
-    display: none;
-}
-
 @media (min-width: 1024px) {
     .main-nav {
         width: 280px;
         height: 100vh;
         flex-direction: column;
-        padding: 60px 20px;
+        padding: 40px 20px;
         border-right: 1px solid rgba(255, 255, 255, 0.05);
         border-bottom: none;
     }
@@ -99,38 +115,17 @@
         flex-direction: column;
         background: none;
         padding: 0;
-        gap: 25px;
+        gap: 10px;
         width: 100%;
         height: auto;
         border: none;
         overflow-y: visible;
     }
+    .nav-item-link {
+        justify-content: flex-start;
+        padding: 10px 16px;
+    }
     .hamburger-menu {
         display: none;
-    }
-    .sidebar-pic {
-        display: block !important;
-        width: 160px;
-        height: 160px;
-        margin-bottom: 30px;
-        position: relative;
-    }
-    .sidebar-pic img {
-        width: 160px;
-        height: 160px;
-        border-radius: 50%;
-        border: 2px solid var(--accent);
-        object-fit: cover;
-    }
-    .sidebar-pic::after {
-        content: "";
-        position: absolute;
-        top: -8px;
-        left: -8px;
-        right: -8px;
-        bottom: -8px;
-        border: 1px solid var(--accent);
-        border-radius: 50%;
-        opacity: 0.3;
     }
 }
