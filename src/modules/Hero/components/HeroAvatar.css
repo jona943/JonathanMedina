@@ -1,0 +1,66 @@
+/* --- HeroAvatar Component Styles --- */
+.hero-avatar-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+@keyframes bubbleFloat {
+    0% {
+        transform: translateY(0);
+        box-shadow: 0 10px 25px rgba(0, 199, 177, 0.25);
+    }
+    50% {
+        transform: translateY(-14px);
+        box-shadow: 0 20px 35px rgba(0, 199, 177, 0.45);
+    }
+    100% {
+        transform: translateY(0);
+        box-shadow: 0 10px 25px rgba(0, 199, 177, 0.25);
+    }
+}
+
+.floating-profile-container {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    animation: bubbleFloat 5s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+.floating-profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent);
+    display: block;
+    position: relative;
+    z-index: 2;
+}
+
+.avatar-glow-ring {
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    border-radius: 50%;
+    border: 1px dashed rgba(0, 199, 177, 0.5);
+    animation: spinRing 20s linear infinite;
+    z-index: 1;
+}
+
+@keyframes spinRing {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 480px) {
+    .floating-profile-container,
+    .floating-profile-pic {
+        width: 95px;
+        height: 95px;
+    }
+}

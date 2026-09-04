@@ -112,6 +112,14 @@ h2 {
     .hero-header, main, .main-footer {
         margin-left: 75px;
         width: calc(100% - 75px);
-        transition: margin-left 0.35s ease, width 0.35s ease;
+        transition: margin-left 0.35s cubic-bezier(0.4, 0, 0.2, 1), width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Displace page content when navbar is hovered on desktop */
+    .main-nav:hover ~ .hero-header,
+    .main-nav:hover ~ main,
+    .main-nav:hover ~ .main-footer {
+        margin-left: 260px;
+        width: calc(100% - 260px);
     }
 }

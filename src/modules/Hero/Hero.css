@@ -1,76 +1,31 @@
-/* --- Hero Module Styles --- */
+/* --- Hero Module Main Styles --- */
 .hero-header {
-    min-height: 70vh;
+    min-height: 100vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 110px 20px 50px;
+    position: relative;
+    padding: 20px;
     background: transparent;
+    overflow: hidden;
 }
 
-@keyframes bubbleFloat {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
-    100% { transform: translateY(0); }
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    margin: auto 0;
 }
 
-.floating-profile-container {
-    margin-bottom: 20px;
-    animation: bubbleFloat 5s ease-in-out infinite;
-}
-
-.floating-profile-pic {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid var(--accent);
-    box-shadow: 0 10px 30px rgba(0, 199, 177, 0.3);
-}
-
-.hero-header .subtitle {
-    color: var(--accent);
-    font-size: 1.1em;
-    margin-bottom: 20px;
-}
-
-.hero-header .intro-text {
-    font-size: 0.95em;
-    max-width: 600px;
-    margin: 0 auto 30px;
-}
-
-.cta-button {
-    display: inline-block;
-    border: 2px solid var(--accent);
-    color: var(--accent) !important;
-    padding: 10px 28px;
-    border-radius: 100px;
-    text-decoration: none;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 0.85rem;
-    transition: var(--transition-smooth);
-    background: transparent;
-}
-
-.cta-button:hover {
-    background-color: var(--accent);
-    color: var(--bg-main) !important;
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0, 199, 177, 0.3);
-}
-
-@media (max-width: 480px) {
-    .hero-header { padding: 90px 15px 40px; }
-    .floating-profile-pic { width: 85px; height: 85px; }
-    .hero-header .subtitle { font-size: 0.95rem; }
-    .hero-header .intro-text { font-size: 0.85rem; margin-bottom: 20px; }
-}
-
-@media (min-width: 1024px) {
-    h1 { font-size: 3.5em; }
+@media (max-width: 768px) {
+    .hero-header {
+        min-height: 100vh;
+        height: auto;
+        padding: 90px 15px 60px;
+    }
 }
