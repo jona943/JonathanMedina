@@ -103,7 +103,7 @@
 }
 
 /* ==========================================================================
-   DESKTOP AUTO-EXPANDING SIDEBAR (LAPTOP & MONITORS)
+   DESKTOP AUTO-EXPANDING SIDEBAR (BALANCED VERTICAL DISTRIBUTION)
    ========================================================================== */
 
 @media (min-width: 1024px) {
@@ -111,7 +111,7 @@
         width: 75px;
         height: 100vh;
         flex-direction: column;
-        padding: 20px 0;
+        padding: 24px 0;
         border-right: 1px solid rgba(255, 255, 255, 0.08);
         border-bottom: none;
         transform: none !important;
@@ -121,7 +121,7 @@
 
     .main-nav:hover {
         width: 260px;
-        padding: 20px 15px;
+        padding: 24px 15px;
         background: rgba(5, 5, 5, 0.72);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
@@ -135,7 +135,7 @@
 
     .nav-container {
         flex-direction: column;
-        justify-content: flex-start;
+        justify-content: space-between;
         height: 100%;
         width: 100%;
         padding: 0;
@@ -147,22 +147,18 @@
         flex-direction: column;
         background: none;
         padding: 0;
-        gap: 6px;
+        flex: 1;
+        justify-content: space-evenly;
         width: 100%;
-        height: auto;
+        height: 100%;
         border: none;
         overflow-y: auto;
-        max-height: calc(100vh - 90px);
         scrollbar-width: none;
         -ms-overflow-style: none;
     }
 
     .nav-links::-webkit-scrollbar {
         display: none;
-    }
-
-    .main-nav:hover .nav-links {
-        max-height: calc(100vh - 210px);
     }
 
     .nav-links li {

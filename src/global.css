@@ -30,6 +30,11 @@ html {
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--bg-main);
+    background-image: linear-gradient(to bottom, rgba(5, 5, 5, 0.85), rgba(5, 5, 5, 0.92)), url('/assets/img/backgrounds/code_init.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     color: var(--text-secondary);
     line-height: 1.6;
     overflow-x: hidden;
