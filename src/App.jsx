@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Navbar } from './components/Navbar';
-import { Hero } from './components/Hero';
-import { About } from './components/About';
-import { Experience } from './components/Experience';
-import { Projects } from './components/Projects';
-import { Certifications } from './components/Certifications';
-import { TechSetup } from './components/TechSetup';
-import { Skills } from './components/Skills';
-import { ContactFooter } from './components/ContactFooter';
-import { LightboxModal } from './components/LightboxModal';
+import { Navbar } from './modules/Navbar/Navbar';
+import { Hero } from './modules/Hero/Hero';
+import { About } from './modules/About/About';
+import { Experience } from './modules/Experience/Experience';
+import { Projects } from './modules/Projects/Projects';
+import { Certifications } from './modules/Certifications/Certifications';
+import { TechSetup } from './modules/TechSetup/TechSetup';
+import { Skills } from './modules/Skills/Skills';
+import { ContactFooter } from './modules/ContactFooter/ContactFooter';
+import { LightboxModal } from './modules/LightboxModal/LightboxModal';
 
 export function App() {
   const [scrollProgress, setScrollProgress] = useState(0);

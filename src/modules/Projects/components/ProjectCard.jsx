@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import './ProjectCard.css';
 
 export const ProjectCard = ({ project }) => {
   const [currentSlide, setCurrentSlide] = useState(0);

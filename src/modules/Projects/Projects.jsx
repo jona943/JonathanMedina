@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
-import { projectsData } from '../data/projectsData';
-import { ProjectCard } from './ProjectCard';
+import { projectsData } from '../../data/projectsData';
+import { ProjectCard } from './components/ProjectCard';
+import './Projects.css';
 
 export const Projects = () => {
   const gridRef = useRef(null);

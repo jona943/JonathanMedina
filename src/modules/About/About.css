@@ -1,0 +1,14 @@
+/* --- About Module Styles --- */
+.pilar-item {
+    background: var(--bg-card);
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    transition: var(--transition-smooth);
+    line-height: 1.8;
+}
+
+.pilar-item:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+}

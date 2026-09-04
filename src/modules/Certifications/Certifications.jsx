@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { certificatesData } from '../data/certificatesData';
+import { certificatesData } from '../../data/certificatesData';
+import './Certifications.css';
 
 export const Certifications = ({ onSelectImage }) => {
   const [currentSlide, setCurrentSlide] = useState(0);

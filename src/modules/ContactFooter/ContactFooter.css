@@ -1,0 +1,39 @@
+/* --- ContactFooter Module Styles --- */
+.main-footer {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.contact-info {
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+}
+
+.contact-info span {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.social-links a {
+    color: var(--text-secondary);
+    font-size: 1.8rem;
+    margin: 0 12px;
+    transition: var(--transition-smooth);
+    display: inline-block;
+}
+
+.social-links a:hover {
+    color: var(--accent);
+    transform: translateY(-3px);
+}
+
+@media (min-width: 1024px) {
+    .main-footer {
+        margin-left: 280px;
+        width: calc(100% - 280px);
+    }
+}

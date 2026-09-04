@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import './TechSetup.css';
 
 export const TechSetup = () => {
   const [currentSlide, setCurrentSlide] = useState(0);

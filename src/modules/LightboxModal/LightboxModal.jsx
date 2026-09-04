@@ -1,4 +1,5 @@
 import React from 'react';
+import './LightboxModal.css';
 
 export const LightboxModal = ({ isOpen, imageSrc, caption, onClose }) => {
   if (!isOpen) return null;

@@ -41,24 +41,22 @@ JonathanMedina/
 └── src/
     ├── main.jsx                                        # Punto de entrada de React 19
     ├── App.jsx                                         # Componente principal SPA
-    ├── components/                                     # Componentes modulares
-    │   ├── Navbar.jsx                                  # Navegación responsiva e interactiva
-    │   ├── Hero.jsx                                    # Sección de encabezado principal
-    │   ├── About.jsx                                   # Filosofía y perfil
-    │   ├── Experience.jsx                              # Trayectoria laboral y hackathons
-    │   ├── Projects.jsx                                # Galería de proyectos destacados
-    │   ├── ProjectCard.jsx                             # Tarjeta interactiva con carrusel interno
-    │   ├── Certifications.jsx                          # Carrusel de reconocimientos y certificados
-    │   ├── TechSetup.jsx                               # Proyecto de laboratorio Linux ARM64
-    │   ├── Skills.jsx                                  # Badges de tecnologías y habilidades
-    │   ├── ContactFooter.jsx                           # Pie de página y enlaces de contacto
-    │   └── LightboxModal.jsx                           # Modal para previsualizar certificaciones
-    ├── data/                                           # Objetos de datos desacoplados
-    │   ├── experienceData.js
-    │   ├── projectsData.js
-    │   └── certificatesData.js
-    └── styles/
-        └── styles.css                                  # Estilos CSS globales, animaciones y variables
+    ├── global.css                                      # Variables de tema y estilos globales
+    ├── modules/                                        # Arquitectura por módulos auto-contenidos
+    │   ├── Navbar/ (Navbar.jsx, Navbar.css)
+    │   ├── Hero/ (Hero.jsx, Hero.css)
+    │   ├── About/ (About.jsx, About.css)
+    │   ├── Experience/ (Experience.jsx, Experience.css)
+    │   ├── Projects/ (Projects.jsx, Projects.css, components/ProjectCard.jsx, components/ProjectCard.css)
+    │   ├── Certifications/ (Certifications.jsx, Certifications.css)
+    │   ├── TechSetup/ (TechSetup.jsx, TechSetup.css)
+    │   ├── Skills/ (Skills.jsx, Skills.css)
+    │   ├── ContactFooter/ (ContactFooter.jsx, ContactFooter.css)
+    │   └── LightboxModal/ (LightboxModal.jsx, LightboxModal.css)
+    └── data/                                           # Objetos de datos desacoplados
+        ├── experienceData.js
+        ├── projectsData.js
+        └── certificatesData.js
 ```
 
 ---
