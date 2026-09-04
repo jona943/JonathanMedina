@@ -22,23 +22,17 @@ export const Skills = () => {
   return (
     <section id="habilidades">
       <h2>Tecnologías & Herramientas</h2>
-      <div
-        className="skills-container"
-        style={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          justifyContent: 'center',
-          gap: '12px',
-          marginTop: '2rem',
-        }}
-      >
+      <div className="skills-grid">
         {skills.map((skill) => (
-          <span key={skill.name} title={skill.name}>
+          <div className="skill-card" key={skill.name} title={skill.name}>
             <img
               src={`https://skillicons.dev/icons?i=${skill.icon}`}
               alt={skill.name}
+              className="skill-icon"
+              loading="lazy"
             />
-          </span>
+            <span className="skill-name">{skill.name}</span>
+          </div>
         ))}
       </div>
     </section>
