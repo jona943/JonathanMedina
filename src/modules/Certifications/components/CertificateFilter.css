@@ -1,0 +1,53 @@
+/* --- CertificateFilter Component Styles --- */
+.cert-filter-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 35px;
+}
+
+.cert-filter-btn {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--text-secondary);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition-smooth);
+}
+
+.cert-filter-btn:hover {
+    border-color: var(--accent);
+    color: var(--text-primary);
+    transform: translateY(-2px);
+}
+
+.cert-filter-btn.active {
+    background: rgba(0, 199, 177, 0.15);
+    border-color: var(--accent);
+    color: var(--accent);
+    box-shadow: 0 4px 15px rgba(0, 199, 177, 0.15);
+}
+
+.filter-icon {
+    font-size: 0.9rem;
+}
+
+.filter-count {
+    font-size: 0.72rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2px 6px;
+    border-radius: 10px;
+}
+
+.cert-filter-btn.active .filter-count {
+    background: var(--accent);
+    color: #000;
+}
