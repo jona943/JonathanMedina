@@ -1,0 +1,33 @@
+/* --- AboutBio Component Styles --- */
+.about-bio-wrapper {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.about-hero-phrase {
+    font-size: 1.35rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    max-width: 750px;
+    margin: 0 auto;
+    font-weight: 400;
+}
+
+.about-hero-phrase strong {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.quote-icon {
+    color: var(--accent);
+    opacity: 0.4;
+    font-size: 1.1rem;
+    margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+    .about-hero-phrase {
+        font-size: 1.1rem;
+    }
+}
+
