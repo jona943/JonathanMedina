@@ -1,34 +1,36 @@
 export const experienceData = [
   {
     id: 'smartfit',
-    title: 'Hackathon - UTEL/Smartfit',
-    role: 'Líder de Equipo (Equipo 13) & Lead Frontend (Julio 2026)',
+    title: 'UTEL / Smartfit',
+    role: 'Líder de Equipo (Equipo 13) & Desarrollador Frontend (Julio 2026)',
     highlights: [
       'Liderazgo y Gestión Ágil: Coordinación de un equipo multidisciplinario de 10 integrantes (Administración, Sistemas, Recursos Humanos, Derecho, Contaduría e Ingeniería), impulsando el flujo de trabajo ágil y la toma de decisiones.',
-      'Arquitectura y Desarrollo MVP: Dirección del desarrollo de "SmartFit Momentum", una solución de gamificación orientada a reducir la deserción en gimnasios basada en la psicología de hábitos (Micro-Wins).',
-      'Integración Técnica y Seguridad: Diseño de la validación pasiva mediante Webhooks simulados de torniquetes QR y temporizador anti-fraude (Timestamp Check).',
-      'Documentación y Presentación: Estructuración de la carpeta completa de gestión, pitch deck e hitos de validación (Pit Stop del 18 de julio).'
+      'Arquitectura y Desarrollo MVP: Dirección del desarrollo de "SmartFit Momentum", una solución de gamificación orientada a reducir la deserción en gimnasios basada en la psicología de hábitos (Pequeñas Victorias).',
+      'Integración Técnica y Seguridad: Diseño de la validación pasiva mediante Webhooks simulados de torniquetes QR y temporizador anti-fraude (Verificación de Marcas de Tiempo).',
+      'Documentación y Presentación: Estructuración de la carpeta completa de gestión, presentación ejecutiva e hitos de validación (Parada Técnica del 18 de julio).'
     ],
     image: 'assets/img/new/hackathon-Smartfit.png',
     alt: 'Evidencia Hackathon UTEL x Smartfit 2025'
   },
   {
     id: 'tiendanube',
-    title: 'Hackathon - UTEL/Tiendanube',
-    role: 'Lead Developer & Project Manager (Marzo 2026)',
+    title: 'UTEL / Tiendanube',
+    role: 'Desarrollador Principal & Gestor de Proyecto (Marzo 2026)',
     highlights: [
       'Gestión Estratégica: Optimizé el equipo para maximizar agilidad y compromiso, diseñando flujos de trabajo entre IA, Negocios e Infraestructura.',
-      'Tech Lead: Coordiné el despliegue del frontend y la arquitectura del repositorio en GitHub, garantizando la cohesión entre el código y la visión de negocio.',
+      'Líder Técnico: Coordiné el despliegue del frontend y la arquitectura del repositorio en GitHub, garantizando la cohesión entre el código y la visión de negocio.',
       'Optimización con IA: Utilicé Gemini CLI para el desarrollo ágil y la toma de decisiones técnicas bajo presión.',
       'Arquitectura de Asistente IA: Lideré el desarrollo de "NubIA", un asistente de IA para emprendedores integrado con APIs de última generación.'
     ],
     image: 'assets/img/new/hackathon-tiendaNube.jpeg',
     alt: 'Evidencia en Hackathon'
   },
+
   {
     id: 'googlecloud',
-    title: 'Hackathon - UTEL/Google Cloud',
-    role: 'Participante (Septiembre 2025)',
+    title: 'UTEL / Google Cloud',
+    role: 'Gestión de Equipos & Co-Desarrollador (Septiembre 2025)',
+
     highlights: [
       'Gestión de Equipos y Resolución de Conflictos - Gestion de cambios constantes en la integración del equipo, manteniendo la cohesión a través del diálogo y el compromiso grupal.',
       'Arquitectura de Ideas y Filtrado Jerárquico - Se diseño una estructura de priorización para filtrar propuestas creativas, logrando unificar herramientas diversas y enfoques técnicos distintos en una solución coherente.',

@@ -1,0 +1,207 @@
+/* --- Experience Card Item Styles --- */
+.experience-card-item {
+    background: var(--bg-card);
+    border-radius: 18px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* --- Diferenciación de Estilo Hackathon vs Trabajo --- */
+.card-type-hackathon {
+    border: 1px solid rgba(255, 184, 0, 0.25);
+}
+
+.card-type-hackathon:hover {
+    border-color: #ffb800;
+    transform: translateY(-6px);
+    box-shadow: 0 16px 35px rgba(255, 184, 0, 0.15);
+}
+
+.card-type-work {
+    border: 1px solid rgba(0, 199, 177, 0.25);
+}
+
+.card-type-work:hover {
+    border-color: var(--accent);
+    transform: translateY(-6px);
+    box-shadow: 0 16px 35px rgba(0, 199, 177, 0.18);
+}
+
+/* --- Encabezado Centrado (Título arriba, Rol/Fecha + Badge abajo) --- */
+.card-header-top {
+    padding: 20px 18px 14px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.card-main-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.35;
+    margin: 0;
+    text-align: center;
+}
+
+.card-meta-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+}
+
+.card-sub-role {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+    margin: 0;
+}
+
+.card-type-tag {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+}
+
+.card-type-hackathon .card-type-tag {
+    background: rgba(255, 184, 0, 0.2);
+    color: #ffc107;
+    border: 1px solid rgba(255, 184, 0, 0.4);
+}
+
+.card-type-work .card-type-tag {
+    background: rgba(0, 199, 177, 0.2);
+    color: var(--accent);
+    border: 1px solid rgba(0, 199, 177, 0.4);
+}
+
+/* --- Media Responsiva y Adaptable --- */
+.card-media-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    background: transparent;
+    overflow: hidden;
+    margin: 12px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+/* Hackathons tienen mayor altura vertical y encuadre lateral refinado */
+.card-media-wrapper.media-hackathon {
+    max-height: 220px;
+    height: 200px;
+    padding: 0 8px;
+}
+
+/* Empresas tienen una altura moderada fluida */
+.card-media-wrapper.media-work {
+    max-height: 160px;
+    height: 150px;
+    padding: 0 8px;
+}
+
+
+
+
+
+.card-credential-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 8px;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+
+
+.experience-card-item:hover .card-credential-img {
+    transform: scale(1.04);
+}
+
+.card-credential-placeholder {
+    width: 100%;
+    height: 100%;
+    min-height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.8rem;
+}
+
+.card-type-hackathon .card-credential-placeholder {
+    color: #ffb800;
+    background: radial-gradient(circle at center, rgba(255, 184, 0, 0.15), transparent 70%);
+}
+
+.card-type-work .card-credential-placeholder {
+    color: var(--accent);
+    background: radial-gradient(circle at center, rgba(0, 199, 177, 0.15), transparent 70%);
+}
+
+/* --- Footer CTA Centrado --- */
+.card-cta-footer {
+    width: 100%;
+    padding: 14px 20px;
+    background: transparent;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+
+.cta-link {
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: gap 0.25s ease;
+}
+
+.card-type-hackathon .cta-link {
+    color: #ffc107;
+}
+
+.card-type-work .cta-link {
+    color: var(--accent);
+}
+
+.experience-card-item:hover .cta-link {
+    gap: 12px;
+}
+
+.cta-icon {
+    font-size: 0.8rem;
+}
+
+
+
+

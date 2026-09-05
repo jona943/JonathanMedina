@@ -1,0 +1,184 @@
+/* --- Experience Modal Styles --- */
+.experience-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(5, 7, 10, 0.85);
+    backdrop-filter: blur(12px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation: fadeInModal 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.experience-modal-content {
+    background: var(--bg-card, #121820);
+    border: 1px solid rgba(0, 199, 177, 0.3);
+    border-radius: 16px;
+    max-width: 650px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    scrollbar-width: none; /* Ocultar scrollbar en Firefox */
+    -ms-overflow-style: none; /* Ocultar scrollbar en IE/Edge */
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    animation: slideUpModal 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.experience-modal-content::-webkit-scrollbar {
+    display: none; /* Ocultar scrollbar en Chrome/Safari/Brave */
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-primary);
+    font-size: 1rem;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-smooth);
+}
+
+.modal-close-btn:hover {
+    background: var(--accent);
+    color: #000;
+    border-color: var(--accent);
+}
+
+.modal-image-header {
+    position: relative;
+    width: 100%;
+    max-height: 300px;
+    overflow: hidden;
+    background: #090d14;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    padding: 12px 12px 0 12px;
+}
+
+.modal-full-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    max-height: 290px;
+    margin: 0 auto;
+    border-radius: 10px; /* Redondeo leve en la imagen */
+}
+
+.modal-badge {
+    position: absolute;
+    bottom: 12px;
+    left: 20px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    backdrop-filter: blur(8px);
+}
+
+.modal-badge.hackathon {
+    background: rgba(255, 184, 0, 0.3);
+    color: #ffc107;
+    border: 1px solid rgba(255, 184, 0, 0.5);
+}
+
+.modal-badge.work {
+    background: rgba(0, 199, 177, 0.3);
+    color: var(--accent);
+    border: 1px solid rgba(0, 199, 177, 0.5);
+}
+
+.modal-body {
+    padding: 25px;
+}
+
+.modal-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+}
+
+.modal-role {
+    font-size: 1rem;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.modal-divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.08);
+    margin: 18px 0;
+}
+
+.modal-section-subtitle {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.modal-highlights-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.modal-highlight-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+.item-icon {
+    color: var(--accent);
+    font-size: 1rem;
+    margin-top: 4px;
+    flex-shrink: 0;
+}
+
+.item-text-wrapper {
+    flex: 1;
+}
+
+.modal-highlight-tag {
+    color: var(--text-primary);
+    font-weight: 700;
+    margin-right: 5px;
+}
+
+@keyframes fadeInModal {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUpModal {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+

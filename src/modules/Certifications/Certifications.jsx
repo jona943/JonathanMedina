@@ -23,27 +23,27 @@ export const Certifications = ({ onSelectImage }) => {
   return (
     <section id="certificaciones">
       <h2>Certificaciones y Reconocimientos</h2>
-      <div className="carousel-container">
+      <div className="cert-carousel-container">
         <div
-          className="carousel-track"
+          className="cert-carousel-track"
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
         >
           {certificatesData.map((cert, index) => (
-            <div key={index} className="carousel-slide">
+            <div key={index} className="cert-carousel-slide">
               <img
                 src={cert.src}
                 alt={cert.alt}
                 onClick={() => onSelectImage && onSelectImage(cert.src, cert.caption)}
               />
-              <p className="carousel-caption">{cert.caption}</p>
+              <p className="cert-carousel-caption">{cert.caption}</p>
             </div>
           ))}
         </div>
-        <div className="carousel-dots">
+        <div className="cert-carousel-dots">
           {certificatesData.map((_, index) => (
             <span
               key={index}
-              className={`dot ${currentSlide === index ? 'active' : ''}`}
+              className={`cert-dot ${currentSlide === index ? 'active' : ''}`}
               onClick={() => setCurrentSlide(index)}
             ></span>
           ))}
@@ -52,3 +52,4 @@ export const Certifications = ({ onSelectImage }) => {
     </section>
   );
 };
+
