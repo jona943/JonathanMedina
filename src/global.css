@@ -9,7 +9,7 @@
     --text-secondary: #a0a0a0;
     --accent: #00c7b1;
     --accent-dark: #00a693;
-    --nav-bg: rgba(5, 5, 5, 0.85);
+    --nav-bg: rgba(5, 5, 5, 0.75);
     --spacing-section: 40px;
     --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
@@ -30,6 +30,11 @@ html {
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--bg-main);
+    background-image: linear-gradient(to bottom, rgba(5, 5, 5, 0.85), rgba(5, 5, 5, 0.92)), url('/assets/img/backgrounds/code_init.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     color: var(--text-secondary);
     line-height: 1.6;
     overflow-x: hidden;
@@ -101,4 +106,20 @@ h2 {
     .container { padding: 0 15px; }
     h1 { font-size: 1.75rem; }
     h2 { font-size: 1.4rem; margin-bottom: 20px; }
+}
+
+@media (min-width: 1024px) {
+    .hero-header, main, .main-footer {
+        margin-left: 75px;
+        width: calc(100% - 75px);
+        transition: margin-left 0.35s cubic-bezier(0.4, 0, 0.2, 1), width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Displace page content when navbar is hovered on desktop */
+    .main-nav:hover ~ .hero-header,
+    .main-nav:hover ~ main,
+    .main-nav:hover ~ .main-footer {
+        margin-left: 260px;
+        width: calc(100% - 260px);
+    }
 }

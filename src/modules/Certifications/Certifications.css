@@ -1,61 +1,25 @@
 /* --- Certifications Module Styles --- */
-.carousel-container {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    margin-top: 20px;
+.certifications-section {
+    padding: 60px 0;
 }
 
-.carousel-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel-slide {
-    min-width: 100%;
-    padding: 10px;
+.certifications-header {
     text-align: center;
+    margin-bottom: 25px;
 }
 
-.carousel-slide img {
-    width: 100%;
-    max-height: 380px;
-    object-fit: contain;
-    border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: var(--bg-card);
-    cursor: pointer;
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.carousel-caption {
-    margin-top: 12px;
-    color: var(--text-primary);
-    font-weight: 600;
-    font-size: 0.95rem;
+@media (min-width: 1024px) {
+    .certificates-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
-.carousel-dots {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 15px;
-    flex-wrap: wrap;
-}
 
-.dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.2);
-    cursor: pointer;
-    transition: var(--transition-smooth);
-}
-
-.dot.active {
-    background: var(--accent);
-    transform: scale(1.2);
-}
-
-@media (max-width: 768px) {
-    .carousel-slide img { max-height: 280px; }
-}

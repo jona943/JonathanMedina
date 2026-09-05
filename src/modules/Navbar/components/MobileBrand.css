@@ -1,0 +1,27 @@
+.mobile-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.mobile-brand-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent);
+}
+
+.mobile-brand-title {
+    color: var(--text-primary);
+    font-weight: 700;
+    font-size: 0.95rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+@media (min-width: 1024px) {
+    .mobile-brand {
+        display: none;
+    }
+}

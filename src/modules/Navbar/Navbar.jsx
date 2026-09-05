@@ -1,37 +1,54 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { NavItem } from './components/NavItem';
+import { SidebarProfile } from './components/SidebarProfile';
+import { MobileBrand } from './components/MobileBrand';
 import './Navbar.css';
 
 export const Navbar = () => {
   const [activeSection, setActiveSection] = useState('inicio');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isNavHidden, setIsNavHidden] = useState(false);
+
+  const lastScrollY = useRef(0);
 
   const navItems = [
-    { id: 'inicio', label: 'Inicio' },
-    { id: 'sobre-mi', label: 'Sobre Mí' },
-    { id: 'experiencia', label: 'Experiencia' },
-    { id: 'portafolio', label: 'Portafolio' },
-    { id: 'certificaciones', label: 'Reconocimientos' },
-    { id: 'tech-setup', label: 'Tech Setup' },
-    { id: 'habilidades', label: 'Habilidades' },
-    { id: 'contacto', label: 'Contacto' },
+    { id: 'inicio', label: 'Inicio', icon: 'fas fa-home' },
+    { id: 'sobre-mi', label: 'Sobre Mí', icon: 'fas fa-user' },
+    { id: 'experiencia', label: 'Experiencia', icon: 'fas fa-briefcase' },
+    { id: 'portafolio', label: 'Portafolio', icon: 'fas fa-layer-group' },
+    { id: 'certificaciones', label: 'Reconocimientos', icon: 'fas fa-award' },
+    { id: 'tech-setup', label: 'Tech Setup', icon: 'fas fa-terminal' },
+    { id: 'habilidades', label: 'Habilidades', icon: 'fas fa-code' },
+    { id: 'contacto', label: 'Contacto', icon: 'fas fa-paper-plane' },
   ];
 
   useEffect(() => {
     const handleScroll = () => {
+      const currentScrollY = window.pageYOffset;
+
+      // Mobile auto-hide topbar on scroll down
+      if (currentScrollY > 80 && currentScrollY > lastScrollY.current && !isMenuOpen) {
+        setIsNavHidden(true);
+      } else {
+        setIsNavHidden(false);
+      }
+      lastScrollY.current = currentScrollY;
+
+      // Active section calculation
       const sections = document.querySelectorAll('section, header');
       let current = 'inicio';
       sections.forEach((section) => {
         const sectionTop = section.offsetTop;
-        if (window.pageYOffset >= sectionTop - 200) {
+        if (currentScrollY >= sectionTop - 200) {
           current = section.getAttribute('id') || 'inicio';
         }
       });
       setActiveSection(current);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isMenuOpen]);
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
@@ -42,11 +59,11 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className="main-nav">
+    <nav className={`main-nav ${isNavHidden ? 'nav-hidden' : ''}`}>
       <div className="container nav-container">
-        <div className="sidebar-pic">
-          <img src="assets/img/profile/jonathan1.jpg" alt="Foto de perfil de Jonathan Medina" />
-        </div>
+        <MobileBrand />
+        <SidebarProfile />
+
         <button
           className="hamburger-menu"
           aria-label="Toggle menu"
@@ -54,17 +71,17 @@ export const Navbar = () => {
         >
           <i className={`fas ${isMenuOpen ? 'fa-times' : 'fa-bars'}`}></i>
         </button>
+
         <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
           {navItems.map((item) => (
-            <li key={item.id}>
-              <a
-                href={`#${item.id}`}
-                className={activeSection === item.id ? 'active' : ''}
-                onClick={closeMenu}
-              >
-                {item.label}
-              </a>
-            </li>
+            <NavItem
+              key={item.id}
+              id={item.id}
+              label={item.label}
+              icon={item.icon}
+              isActive={activeSection === item.id}
+              onClick={closeMenu}
+            />
           ))}
         </ul>
       </div>

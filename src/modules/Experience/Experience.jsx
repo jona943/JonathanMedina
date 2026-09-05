@@ -1,46 +1,75 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { experienceData } from '../../data/experienceData';
+import { ExperienceItem } from './components/ExperienceItem';
+import { ExperienceModal } from './components/ExperienceModal';
 import './Experience.css';
 
 export const Experience = () => {
+  const [selectedExperience, setSelectedExperience] = useState(null);
+  const sliderRef = useRef(null);
+
+  const handleOpenModal = (item) => {
+    setSelectedExperience(item);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedExperience(null);
+  };
+
+  const scrollLeft = () => {
+    if (sliderRef.current) {
+      sliderRef.current.scrollBy({ left: -340, behavior: 'smooth' });
+    }
+  };
+
+  const scrollRight = () => {
+    if (sliderRef.current) {
+      sliderRef.current.scrollBy({ left: 340, behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section id="experiencia">
-      <h2>Experiencia y Comunidad</h2>
-      <div className="experience-list">
-        {experienceData.map((item) => (
-          <div key={item.id} className="puesto_de_trabajo">
-            <div className="work-header">
-              <h4>{item.title}</h4>
-              <p><strong>{item.role}</strong></p>
-            </div>
-            <div className="work-body">
-              <ul>
-                {item.highlights.map((highlight, index) => (
-                  <li key={index}>
-                    {highlight.includes(':') ? (
-                      <>
-                        <strong>{highlight.split(':')[0]}:</strong>
-                        {highlight.substring(highlight.indexOf(':') + 1)}
-                      </>
-                    ) : (
-                      highlight
-                    )}
-                  </li>
-                ))}
-              </ul>
-              {item.image && (
-                <div className="work-evidence">
-                  <img
-                    src={item.image}
-                    alt={item.alt || item.title}
-                    className="evidence-thumb"
-                  />
-                </div>
-              )}
-            </div>
-          </div>
-        ))}
+    <section id="experiencia" className="experience-section">
+      <div className="experience-header-wrapper">
+        <h2 className="section-title">Experiencia y Comunidad</h2>
+        <p className="section-subtitle">
+          Proyectos de alto impacto en Hackathons y liderazgo en operaciones administrativas.
+        </p>
       </div>
+
+      <div className="carousel-container">
+        <button 
+          className="carousel-btn prev-btn" 
+          onClick={scrollLeft} 
+          aria-label="Experiencia anterior"
+        >
+          <i className="fas fa-chevron-left"></i>
+        </button>
+
+        <div className="experience-carousel" ref={sliderRef}>
+          {experienceData.map((item) => (
+            <div key={item.id} className="carousel-slide">
+              <ExperienceItem item={item} onSelect={handleOpenModal} />
+            </div>
+          ))}
+        </div>
+
+        <button 
+          className="carousel-btn next-btn" 
+          onClick={scrollRight} 
+          aria-label="Siguiente experiencia"
+        >
+          <i className="fas fa-chevron-right"></i>
+        </button>
+      </div>
+
+      {selectedExperience && (
+        <ExperienceModal item={selectedExperience} onClose={handleCloseModal} />
+      )}
     </section>
   );
 };
+
+
+
+

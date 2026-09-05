@@ -4,16 +4,22 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-    background: var(--nav-bg);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
+    background: rgba(5, 5, 5, 0.70);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 70px;
     z-index: 1000;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.35s ease, width 0.35s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s ease, padding 0.35s ease;
+}
+
+/* Auto-hide topbar on mobile scroll down */
+.main-nav.nav-hidden {
+    transform: translateY(-100%);
 }
 
 .nav-container {
@@ -32,13 +38,13 @@
     left: 0;
     width: 100%;
     height: calc(100vh - 70px);
-    background: rgba(5, 5, 5, 0.98);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    padding: 30px 20px;
+    background: rgba(5, 5, 5, 0.75);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    padding: 20px;
     text-align: center;
-    gap: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    gap: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     overflow-y: auto;
     z-index: 999;
 }
@@ -47,20 +53,43 @@
     display: flex;
 }
 
-.nav-links a {
+.nav-item-link {
     color: var(--text-secondary);
     text-decoration: none;
     font-weight: 600;
     text-transform: uppercase;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     letter-spacing: 1px;
-    padding: 10px;
-    display: block;
+    padding: 8px 12px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: var(--transition-smooth);
+    white-space: nowrap;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
+.nav-item-icon {
+    font-size: 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav-item-link:hover {
     color: var(--accent);
+    background: rgba(0, 199, 177, 0.08);
+}
+
+.nav-item-link:hover .nav-item-icon {
+    transform: scale(1.15);
+}
+
+.nav-item-link.active {
+    color: var(--accent);
+    background: rgba(0, 199, 177, 0.14);
 }
 
 .hamburger-menu {
@@ -73,64 +102,115 @@
     padding: 5px;
 }
 
-.sidebar-pic {
-    display: none;
-}
+/* ==========================================================================
+   DESKTOP AUTO-EXPANDING SIDEBAR (BALANCED VERTICAL DISTRIBUTION)
+   ========================================================================== */
 
 @media (min-width: 1024px) {
     .main-nav {
-        width: 280px;
+        width: 75px;
         height: 100vh;
         flex-direction: column;
-        padding: 60px 20px;
-        border-right: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 24px 0;
+        border-right: 1px solid rgba(255, 255, 255, 0.08);
         border-bottom: none;
+        transform: none !important;
+        transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1), padding 0.35s ease, background 0.3s ease;
+        box-shadow: 5px 0 25px rgba(0, 0, 0, 0.3);
     }
+
+    .main-nav:hover {
+        width: 260px;
+        padding: 24px 15px;
+        background: rgba(5, 5, 5, 0.72);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-right: 1px solid rgba(0, 199, 177, 0.25);
+        box-shadow: 10px 0 35px rgba(0, 199, 177, 0.1);
+    }
+
+    .hamburger-menu {
+        display: none !important;
+    }
+
     .nav-container {
         flex-direction: column;
-        justify-content: flex-start;
+        justify-content: space-between;
         height: 100%;
-        max-width: 100%;
+        width: 100%;
         padding: 0;
     }
+
     .nav-links {
         display: flex !important;
         position: static;
         flex-direction: column;
         background: none;
         padding: 0;
-        gap: 25px;
+        flex: 1;
+        justify-content: space-evenly;
         width: 100%;
-        height: auto;
+        height: 100%;
         border: none;
-        overflow-y: visible;
+        overflow-y: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
     }
-    .hamburger-menu {
+
+    .nav-links::-webkit-scrollbar {
         display: none;
     }
-    .sidebar-pic {
-        display: block !important;
-        width: 160px;
-        height: 160px;
-        margin-bottom: 30px;
-        position: relative;
+
+    .nav-links li {
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
-    .sidebar-pic img {
-        width: 160px;
-        height: 160px;
-        border-radius: 50%;
-        border: 2px solid var(--accent);
-        object-fit: cover;
+
+    /* Plegado: Icono e Indicador 100% Centrados */
+    .nav-item-link {
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        justify-content: center;
+        margin: 0 auto;
+        border-radius: 10px;
     }
-    .sidebar-pic::after {
-        content: "";
-        position: absolute;
-        top: -8px;
-        left: -8px;
-        right: -8px;
-        bottom: -8px;
-        border: 1px solid var(--accent);
-        border-radius: 50%;
-        opacity: 0.3;
+
+    .nav-item-icon {
+        min-width: unset;
+        margin: 0;
+    }
+
+    .nav-item-text {
+        display: none;
+        opacity: 0;
+        max-width: 0;
+        transition: opacity 0.25s ease, max-width 0.35s ease;
+    }
+
+    /* Desplegado (Hover): Alineación completa */
+    .main-nav:hover .nav-links li {
+        justify-content: stretch;
+    }
+
+    .main-nav:hover .nav-item-link {
+        width: 100%;
+        height: auto;
+        padding: 8px 12px;
+        justify-content: flex-start;
+        border-radius: 8px;
+    }
+
+    .main-nav:hover .nav-item-text {
+        display: inline-block;
+        opacity: 1;
+        max-width: 180px;
+        margin-left: 6px;
+    }
+
+    .main-nav:hover .nav-item-link.active {
+        border-left: 3px solid var(--accent);
+        border-radius: 4px 8px 8px 4px;
     }
 }

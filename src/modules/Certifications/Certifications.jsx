@@ -1,54 +1,48 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import { certificatesData } from '../../data/certificatesData';
+import { CertificateFilter } from './components/CertificateFilter';
+import { CertificateCard } from './components/CertificateCard';
 import './Certifications.css';
 
 export const Certifications = ({ onSelectImage }) => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const autoPlayRef = useRef(null);
+  const [activeCategory, setActiveCategory] = useState('hackathons');
 
-  const totalSlides = certificatesData.length;
+  const categories = [
+    { id: 'hackathons', label: 'Hackathons', count: certificatesData.filter(c => c.category === 'hackathons').length, icon: 'fas fa-trophy' },
+    { id: 'dev', label: 'Desarrollo Web', count: certificatesData.filter(c => c.category === 'dev').length, icon: 'fas fa-code' },
+    { id: 'ai', label: 'IA & Ciencia Datos', count: certificatesData.filter(c => c.category === 'ai').length, icon: 'fas fa-brain' },
+    { id: 'security', label: 'Seguridad & Forense', count: certificatesData.filter(c => c.category === 'security').length, icon: 'fas fa-shield-halved' }
+  ];
 
-  useEffect(() => {
-    if (totalSlides <= 1) return;
+  const filteredCertificates = certificatesData.filter(c => c.category === activeCategory);
 
-    autoPlayRef.current = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % totalSlides);
-    }, 5000);
-
-    return () => {
-      if (autoPlayRef.current) clearInterval(autoPlayRef.current);
-    };
-  }, [totalSlides]);
 
   return (
-    <section id="certificaciones">
-      <h2>Certificaciones y Reconocimientos</h2>
-      <div className="carousel-container">
-        <div
-          className="carousel-track"
-          style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-        >
-          {certificatesData.map((cert, index) => (
-            <div key={index} className="carousel-slide">
-              <img
-                src={cert.src}
-                alt={cert.alt}
-                onClick={() => onSelectImage && onSelectImage(cert.src, cert.caption)}
-              />
-              <p className="carousel-caption">{cert.caption}</p>
-            </div>
-          ))}
-        </div>
-        <div className="carousel-dots">
-          {certificatesData.map((_, index) => (
-            <span
-              key={index}
-              className={`dot ${currentSlide === index ? 'active' : ''}`}
-              onClick={() => setCurrentSlide(index)}
-            ></span>
-          ))}
-        </div>
+    <section id="certificaciones" className="certifications-section">
+      <div className="certifications-header">
+        <h2 className="section-title">Certificaciones y Reconocimientos</h2>
+        <p className="section-subtitle">
+          Credenciales oficiales que respaldan mi solvencia técnica y formación continua.
+        </p>
+      </div>
+
+      <CertificateFilter
+        categories={categories}
+        activeCategory={activeCategory}
+        onSelectCategory={setActiveCategory}
+      />
+
+      <div className="certificates-grid">
+        {filteredCertificates.map((cert) => (
+          <CertificateCard
+            key={cert.id}
+            cert={cert}
+            onZoom={onSelectImage}
+          />
+        ))}
       </div>
     </section>
   );
 };
+
+
