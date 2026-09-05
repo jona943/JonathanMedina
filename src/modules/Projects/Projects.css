@@ -1,65 +1,111 @@
 /* --- Projects Module Styles --- */
-.portfolio-wrapper {
-    position: relative;
-    width: 100%;
-    display: flex;
-    align-items: center;
+.projects-section {
+    padding: 60px 0;
 }
 
-.portfolio-grid {
+.projects-header-wrapper {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.proj-carousel-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 45px;
+    box-sizing: border-box;
+}
+
+.projects-carousel {
     display: flex;
+    gap: 20px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    scroll-padding: 0 10px;
-    gap: 20px;
-    padding: 20px 10px 30px;
     scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
+    padding: 15px 5px;
     scrollbar-width: none;
     -ms-overflow-style: none;
     width: 100%;
+    box-sizing: border-box;
 }
 
-.portfolio-grid::-webkit-scrollbar { display: none; }
+.projects-carousel::-webkit-scrollbar {
+    display: none;
+}
 
-.scroll-arrow {
+.proj-carousel-slide {
+    flex: 0 0 calc((100% - 40px) / 3);
+    width: calc((100% - 40px) / 3);
+    min-width: 0;
+    box-sizing: border-box;
+    scroll-snap-align: start;
+}
+
+/* Botones de Navegación Lateral */
+.proj-carousel-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-    background: rgba(0, 199, 177, 0.15);
-    border: 1px solid var(--accent);
-    color: var(--accent);
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
+    background: rgba(18, 24, 32, 0.85);
+    border: 1px solid rgba(0, 199, 177, 0.4);
+    color: var(--accent);
+    font-size: 1.1rem;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    z-index: 100;
-    backdrop-filter: blur(5px);
-    transition: var(--transition-smooth);
-    opacity: 0.8;
+    z-index: 10;
+    backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
 
-.scroll-arrow:hover {
-    opacity: 1;
+.proj-carousel-btn:hover {
     background: var(--accent);
-    color: var(--bg-main);
-    box-shadow: 0 0 15px var(--accent);
+    color: #000;
+    box-shadow: 0 8px 25px rgba(0, 199, 177, 0.4);
 }
 
-.arrow-left { left: -10px; }
-.arrow-right { right: -10px; }
-
-@media (max-width: 768px) {
-    .scroll-arrow { display: none; }
-    .portfolio-grid { padding-left: 0; padding-right: 0; }
+.proj-prev-btn {
+    left: 0;
 }
 
-@media (min-width: 1024px) {
-    .portfolio-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
+.proj-next-btn {
+    right: 0;
+}
+
+@media (min-width: 900px) {
+    .proj-carousel-slide {
+        flex: 0 0 calc((100% - 40px) / 3);
+        width: calc((100% - 40px) / 3);
+        min-width: 0;
     }
 }
+
+@media (max-width: 899px) and (min-width: 601px) {
+    .proj-carousel-slide {
+        flex: 0 0 calc((100% - 20px) / 2);
+        width: calc((100% - 20px) / 2);
+        min-width: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .proj-carousel-container {
+        padding: 0 10px;
+    }
+
+    .proj-carousel-btn {
+        display: none;
+    }
+
+    .proj-carousel-slide {
+        flex: 0 0 85%;
+        width: 85%;
+        min-width: 0;
+    }
+}
+

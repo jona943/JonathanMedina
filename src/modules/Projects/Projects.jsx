@@ -1,51 +1,72 @@
-import React, { useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { projectsData } from '../../data/projectsData';
 import { ProjectCard } from './components/ProjectCard';
+import { ProjectModal } from './components/ProjectModal';
 import './Projects.css';
 
 export const Projects = () => {
-  const gridRef = useRef(null);
+  const [selectedProject, setSelectedProject] = useState(null);
+  const sliderRef = useRef(null);
+
+  const handleOpenModal = (project) => {
+    setSelectedProject(project);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedProject(null);
+  };
 
   const scrollLeft = () => {
-    if (gridRef.current) {
-      const card = gridRef.current.querySelector('.project-card');
-      const cardWidth = card ? card.offsetWidth + 20 : 350;
-      gridRef.current.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+    if (sliderRef.current) {
+      sliderRef.current.scrollBy({ left: -340, behavior: 'smooth' });
     }
   };
 
   const scrollRight = () => {
-    if (gridRef.current) {
-      const card = gridRef.current.querySelector('.project-card');
-      const cardWidth = card ? card.offsetWidth + 20 : 350;
-      gridRef.current.scrollBy({ left: cardWidth, behavior: 'smooth' });
+    if (sliderRef.current) {
+      sliderRef.current.scrollBy({ left: 340, behavior: 'smooth' });
     }
   };
 
   return (
-    <section id="portafolio">
-      <h2>Proyectos Destacados</h2>
-      <div className="portfolio-wrapper">
+    <section id="portafolio" className="projects-section">
+      <div className="projects-header-wrapper">
+        <h2 className="section-title">Proyectos Destacados</h2>
+        <p className="section-subtitle">
+          Soluciones de software, herramientas de optimización e integraciones de IA.
+        </p>
+      </div>
+
+      <div className="proj-carousel-container">
         <button
-          className="scroll-arrow arrow-left"
+          className="proj-carousel-btn proj-prev-btn"
           aria-label="Anterior proyecto"
           onClick={scrollLeft}
         >
           <i className="fas fa-chevron-left"></i>
         </button>
-        <div ref={gridRef} className="portfolio-grid">
+
+        <div className="projects-carousel" ref={sliderRef}>
           {projectsData.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+            <div key={project.id} className="proj-carousel-slide">
+              <ProjectCard project={project} onSelect={handleOpenModal} />
+            </div>
           ))}
         </div>
+
         <button
-          className="scroll-arrow arrow-right"
+          className="proj-carousel-btn proj-next-btn"
           aria-label="Siguiente proyecto"
           onClick={scrollRight}
         >
           <i className="fas fa-chevron-right"></i>
         </button>
       </div>
+
+      {selectedProject && (
+        <ProjectModal project={selectedProject} onClose={handleCloseModal} />
+      )}
     </section>
   );
 };
+

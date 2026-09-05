@@ -1,7 +1,7 @@
 export const projectsData = [
   {
     id: 'smartfit',
-    date: 'Hackathon Smartfit - Equipo 13 Leader',
+    date: 'Hackathon Smartfit - Líder de Equipo 13',
     title: 'SmartFit Momentum',
     slides: [
       { src: 'assets/img/proyectos-TI/Smartfi-Momentum-1.jpg', alt: 'SmartFit Momentum 1' },
@@ -11,7 +11,7 @@ export const projectsData = [
       { src: 'assets/img/proyectos-TI/Smartfi-Momentum-5.jpg', alt: 'SmartFit Momentum 5' },
       { src: 'assets/img/proyectos-TI/Smartfi-Momentum-6.jpg', alt: 'SmartFit Momentum 6' }
     ],
-    description: 'MVP galardonado para reducir la deserción en gimnasios mediante la psicología de Micro-Wins (2 min de check-in), Webhooks de torniquetes QR y temporizador anti-fraude.',
+    description: 'Solución MVP diseñada para reducir la deserción en gimnasios mediante la psicología de Pequeñas Victorias (2 min de registro), Webhooks de torniquetes QR y validación anti-fraude.',
     links: [
       { label: 'Repositorio', url: 'https://github.com/jona943/app-Smartfit', icon: 'fab fa-github' },
       { label: 'Documentación Drive', url: 'https://drive.google.com/drive/folders/1qPFKSW3Yo-vov0BRcXs0hoymsiHlmRkM?usp=sharing', icon: 'fab fa-google-drive' },
@@ -20,8 +20,8 @@ export const projectsData = [
   },
   {
     id: 'nubia',
-    date: 'Hackathon Tiendanube - Lead Developer',
-    title: 'NubIA - Frontend',
+    date: 'Hackathon Tiendanube - Desarrollador Principal',
+    title: 'NubIA - Interfaz Web',
     slides: [
       { src: 'assets/img/proyectos-TI/NubIA-1.jpeg', alt: 'NubIA Frontend 1' },
       { src: 'assets/img/proyectos-TI/NubIA-2.jpeg', alt: 'NubIA Frontend 2' },
@@ -35,14 +35,14 @@ export const projectsData = [
   },
   {
     id: 'almalocal',
-    date: 'Hackathon Google Cloud - Backend & API',
+    date: 'Hackathon Google Cloud - Backend y API',
     title: 'Alma Local',
     slides: [
       { src: 'assets/img/proyectos-TI/AlmaLocal-1.jpeg', alt: 'Alma Local 1' },
       { src: 'assets/img/proyectos-TI/AlmaLocal-2.jpeg', alt: 'Alma Local 2' },
       { src: 'assets/img/proyectos-TI/AlmaLocal-3.jpeg', alt: 'Alma Local 3' }
     ],
-    description: 'Desarrollo de API con Flask, integración de API Keys y frontend dinámico para soluciones escalables en la nube.',
+    description: 'Desarrollo de API con Flask, integración de claves de API y frontend dinámico para soluciones escalables en la nube.',
     links: [
       { label: 'Ver Repositorio', url: 'https://github.com/jona943/alma_local-3.1', icon: 'fab fa-github' }
     ]
@@ -64,7 +64,7 @@ export const projectsData = [
   },
   {
     id: 'playcat',
-    date: 'Mini-juego - Firebase Realtime',
+    date: 'Juego Interactivo - Firebase Tiempo Real',
     title: 'Play Cat XO',
     slides: [
       { src: 'assets/img/proyectos-TI/gato1.jpeg', alt: 'Play Cat XO 1' },
@@ -72,22 +72,23 @@ export const projectsData = [
       { src: 'assets/img/proyectos-TI/gato3.jpeg', alt: 'Play Cat XO 3' },
       { src: 'assets/img/proyectos-TI/gato4.jpeg', alt: 'Play Cat XO 4' }
     ],
-    description: 'Mini-juego del gato multijugador en tiempo real. Utiliza Firebase para sincronizar partidas simultáneas entre amigos.',
+    description: 'Juego del gato multijugador en tiempo real. Utiliza Firebase para sincronizar partidas simultáneas entre amigos.',
     links: [
-      { label: 'Repositorio', url: 'https://github.com/jona943/play-cat-OX', icon: 'fab fa-github' },
+      { label: 'Ver Repositorio', url: 'https://github.com/jona943/play-cat-OX', icon: 'fab fa-github' },
       { label: 'Probar Juego', url: 'https://jona943.github.io/play-cat-OX/', icon: 'fas fa-external-link-alt' }
     ]
   },
   {
     id: 'configjm',
     date: 'Optimización - Linux & Kernel',
-    title: 'Config-JM (HP Laptop)',
+    title: 'Config-JM (Laptop HP)',
     slides: [
       { src: 'assets/img/EntornoDeDesarrollo/EntonoLaptop.png', alt: 'Config-JM HP Laptop' }
     ],
-    description: 'Repositorio personal de configuraciones de sistema, driver de Wi-Fi rtw88_8723de, perfiles de energía y optimización ZRAM bajo Ubuntu Server XFCE.',
+    description: 'Repositorio personal de configuraciones de sistema, controlador Wi-Fi rtw88_8723de, perfiles de energía y optimización ZRAM bajo Ubuntu Server XFCE.',
     links: [
       { label: 'Ver Repositorio', url: 'https://github.com/jona943/config-JM', icon: 'fab fa-github' }
     ]
   }
 ];
+
