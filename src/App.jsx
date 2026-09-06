@@ -5,7 +5,7 @@ import { About } from './modules/About/About';
 import { Experience } from './modules/Experience/Experience';
 import { Projects } from './modules/Projects/Projects';
 import { Certifications } from './modules/Certifications/Certifications';
-import { TechSetup } from './modules/TechSetup/TechSetup';
+import { LinuxLab } from './modules/LinuxLab/LinuxLab';
 import { Skills } from './modules/Skills/Skills';
 import { ContactFooter } from './modules/ContactFooter/ContactFooter';
 import { LightboxModal } from './modules/LightboxModal/LightboxModal';
@@ -62,7 +62,7 @@ export function App() {
           <Experience />
           <Projects />
           <Certifications onSelectImage={openLightbox} />
-          <TechSetup />
+          <LinuxLab />
           <Skills />
         </div>
       </main>

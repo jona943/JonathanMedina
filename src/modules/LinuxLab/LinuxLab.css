@@ -1,0 +1,107 @@
+/* --- LinuxLab Compact Dashboard Layout Styles --- */
+.linux-lab-section {
+    padding: 60px 0;
+    position: relative;
+}
+
+/* Compact Section Header */
+.section-header-compact {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.header-text {
+    flex: 1;
+}
+
+.repo-btn-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--bg-card);
+    border: 1px solid rgba(0, 199, 177, 0.3);
+    border-radius: 12px;
+    padding: 10px 16px;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+    white-space: nowrap;
+}
+
+.repo-btn-header:hover {
+    border-color: var(--accent);
+    background: rgba(0, 199, 177, 0.08);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 199, 177, 0.15);
+}
+
+.repo-btn-header .repo-icon {
+    font-size: 1.6rem;
+    color: var(--accent);
+}
+
+.repo-btn-header .repo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.repo-btn-header .repo-title {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.repo-btn-header .repo-sub {
+    font-size: 0.72rem;
+    color: var(--text-secondary);
+}
+
+.repo-btn-header .ext-icon {
+    font-size: 0.8rem;
+    color: var(--accent);
+    margin-left: 4px;
+}
+
+/* Centered Subtitle for Solution & Highlights */
+.highlights-section-title-centered {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-align: center;
+    margin: 8px 0 4px 0;
+    letter-spacing: 0.3px;
+}
+
+/* Layout Dashboard */
+.lab-dashboard-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.lab-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 20px;
+    align-items: center; /* Centrado Vertical Perfecto entre Galería e Hitos */
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 992px) {
+    .section-header-compact {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .repo-btn-header {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .lab-content-grid {
+        grid-template-columns: 1fr;
+    }
+}

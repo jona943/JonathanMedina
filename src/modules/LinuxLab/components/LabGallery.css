@@ -1,0 +1,118 @@
+/* --- LabGallery Horizontal Bar Component Styles --- */
+.lab-gallery-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 14px;
+    padding: 14px;
+}
+
+.lab-gallery-preview {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #0d1117;
+    height: 280px;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lab-gallery-preview img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.lab-gallery-preview:hover img {
+    transform: scale(1.02);
+}
+
+.lab-gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 15, 25, 0.65);
+    backdrop-filter: blur(4px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 0.9rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.lab-gallery-overlay i {
+    font-size: 1.4rem;
+}
+
+.lab-gallery-preview:hover .lab-gallery-overlay {
+    opacity: 1;
+}
+
+.lab-gallery-thumbnails {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.lab-thumb-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 6px 10px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    text-align: left;
+}
+
+.lab-thumb-btn:hover {
+    border-color: rgba(0, 199, 177, 0.4);
+    background: rgba(0, 199, 177, 0.04);
+}
+
+.lab-thumb-btn.active {
+    border-color: var(--accent);
+    background: rgba(0, 199, 177, 0.08);
+    box-shadow: 0 0 10px rgba(0, 199, 177, 0.15);
+}
+
+.lab-thumb-btn img {
+    width: 44px;
+    height: 36px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.thumb-caption {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.lab-thumb-btn.active .thumb-caption {
+    color: var(--accent);
+}
+
+@media (max-width: 600px) {
+    .lab-gallery-preview {
+        height: 200px;
+    }
+}

@@ -17,7 +17,7 @@ export const Navbar = () => {
     { id: 'experiencia', label: 'Experiencia', icon: 'fas fa-briefcase' },
     { id: 'portafolio', label: 'Portafolio', icon: 'fas fa-layer-group' },
     { id: 'certificaciones', label: 'Reconocimientos', icon: 'fas fa-award' },
-    { id: 'tech-setup', label: 'Tech Setup', icon: 'fas fa-terminal' },
+    { id: 'linux-lab', label: 'Linux Lab', icon: 'fas fa-terminal' },
     { id: 'habilidades', label: 'Habilidades', icon: 'fas fa-code' },
     { id: 'contacto', label: 'Contacto', icon: 'fas fa-paper-plane' },
   ];
