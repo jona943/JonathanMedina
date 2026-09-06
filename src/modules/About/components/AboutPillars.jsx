@@ -6,23 +6,23 @@ export const AboutPillars = () => {
     {
       id: 'business',
       icon: 'fas fa-chart-line',
-      title: 'Visión de Negocio',
-      badge: 'Lic. Administración UTEL',
-      description: 'Comprensión de procesos internos, rentabilidad y metas comerciales.',
+      title: 'Estrategia & Procesos',
+      badge: 'Administración',
+      description: 'Análisis de flujos de trabajo, optimización de recursos y diseño de soluciones alineadas a objetivos de negocio.',
     },
     {
       id: 'frontend-ai',
       icon: 'fas fa-laptop-code',
-      title: 'Full Stack & IA',
-      badge: 'DEV.F x Bécalos',
-      description: 'SPAs modernas con React 19, Node.js e integración de modelos IA.',
+      title: 'Desarrollo Web & IA',
+      badge: 'Frontend Lead',
+      description: 'Construcción de interfaces interactivas en React, consumo de APIs REST y automatización inteligente con modelos de IA.',
     },
     {
-      id: 'leadership',
-      icon: 'fas fa-users-gear',
-      title: 'Liderazgo & Labs',
-      badge: 'Hackathons Lead',
-      description: 'Liderazgo técnico de equipos (+10 pers.) y optimización Linux ARM64.',
+      id: 'systems',
+      icon: 'fas fa-terminal',
+      title: 'Sistemas & Servidores',
+      badge: 'Linux Labs',
+      description: 'Configuración, auditoría de hardware y despliegue de entornos Linux eficientes sin consumo excesivo de recursos.',
     },
   ];
 
@@ -43,4 +43,3 @@ export const AboutPillars = () => {
     </div>
   );
 };
-

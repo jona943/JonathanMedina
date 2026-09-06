@@ -75,6 +75,32 @@
 @media (max-width: 600px) {
     .pillars-grid {
         grid-template-columns: 1fr;
-        gap: 15px;
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+    .pillar-card {
+        padding: 16px 14px;
+        border-radius: 14px;
+    }
+    .pillar-header {
+        margin-bottom: 10px;
+    }
+    .pillar-icon-box {
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
+        border-radius: 10px;
+    }
+    .pillar-badge {
+        font-size: 0.68rem;
+        padding: 2px 7px;
+    }
+    .pillar-title {
+        font-size: 1.1rem;
+        margin-bottom: 6px;
+    }
+    .pillar-description {
+        font-size: 0.84rem;
+        line-height: 1.5;
     }
 }

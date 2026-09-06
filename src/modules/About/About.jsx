@@ -1,7 +1,6 @@
 import React from 'react';
 import { AboutBio } from './components/AboutBio';
 import { AboutPillars } from './components/AboutPillars';
-import { AboutStats } from './components/AboutStats';
 import './About.css';
 
 export const About = () => {
@@ -10,10 +9,8 @@ export const About = () => {
       <div className="about-container">
         <h2 className="about-title">Estrategia y Código en Sinergia</h2>
         <AboutBio />
-        <AboutStats />
         <AboutPillars />
       </div>
     </section>
   );
 };
-
