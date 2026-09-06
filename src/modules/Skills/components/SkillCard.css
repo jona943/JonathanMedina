@@ -1,0 +1,80 @@
+/* --- SkillCard Icon-Only Clean Styles --- */
+.skill-card-icon-only {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    padding: 10px;
+    transition: var(--transition-smooth);
+    cursor: pointer;
+    width: 54px;
+    height: 54px;
+}
+
+.skill-card-icon-only:hover {
+    transform: translateY(-4px) scale(1.05);
+    border-color: var(--accent);
+    background: rgba(0, 199, 177, 0.06);
+    box-shadow: 0 6px 18px rgba(0, 199, 177, 0.2);
+}
+
+.skill-icon-pure {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.skill-icon-fallback-pure {
+    width: 36px;
+    height: 36px;
+    background: rgba(0, 199, 177, 0.1);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    font-size: 1.1rem;
+}
+
+/* Tooltip en Hover */
+.skill-tooltip {
+    position: absolute;
+    bottom: -32px;
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+    background: rgba(13, 17, 23, 0.95);
+    color: var(--text-primary);
+    border: 1px solid rgba(0, 199, 177, 0.3);
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 6px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.skill-card-icon-only:hover .skill-tooltip {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+@media (max-width: 480px) {
+    .skill-card-icon-only {
+        width: 48px;
+        height: 48px;
+        padding: 8px;
+    }
+    .skill-icon-pure,
+    .skill-icon-fallback-pure {
+        width: 32px;
+        height: 32px;
+    }
+}
