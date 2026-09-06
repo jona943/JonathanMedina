@@ -8,6 +8,7 @@ export const Navbar = () => {
   const [activeSection, setActiveSection] = useState('inicio');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isNavHidden, setIsNavHidden] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const lastScrollY = useRef(0);
 
@@ -25,6 +26,12 @@ export const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.pageYOffset;
+
+      if (currentScrollY > 30) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
 
       // Mobile auto-hide topbar on scroll down
       if (currentScrollY > 80 && currentScrollY > lastScrollY.current && !isMenuOpen) {
@@ -59,7 +66,11 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className={`main-nav ${isNavHidden ? 'nav-hidden' : ''}`}>
+    <nav
+      className={`main-nav ${isNavHidden ? 'nav-hidden' : ''} ${
+        isScrolled ? 'scrolled' : ''
+      } ${isMenuOpen ? 'menu-open' : ''}`}
+    >
       <div className="container nav-container">
         <SidebarProfile />
 
