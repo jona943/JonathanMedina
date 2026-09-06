@@ -61,7 +61,6 @@ export const Navbar = () => {
   return (
     <nav className={`main-nav ${isNavHidden ? 'nav-hidden' : ''}`}>
       <div className="container nav-container">
-        <MobileBrand />
         <SidebarProfile />
 
         <button
@@ -73,6 +72,9 @@ export const Navbar = () => {
         </button>
 
         <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
+          <li className="mobile-drawer-brand-wrapper">
+            <MobileBrand onClick={closeMenu} />
+          </li>
           {navItems.map((item) => (
             <NavItem
               key={item.id}
