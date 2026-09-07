@@ -75,32 +75,39 @@
 @media (max-width: 600px) {
     .pillars-grid {
         grid-template-columns: 1fr;
-        gap: 12px;
-        margin-bottom: 20px;
-    }
-    .pillar-card {
-        padding: 16px 14px;
-        border-radius: 14px;
-    }
-    .pillar-header {
+        gap: 10px;
         margin-bottom: 10px;
     }
+    .pillar-card {
+        padding: 12px 14px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.025);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .pillar-card:active {
+        border-color: var(--accent);
+        background: rgba(0, 199, 177, 0.05);
+        transform: scale(0.98);
+    }
+    .pillar-header {
+        margin-bottom: 8px;
+    }
     .pillar-icon-box {
-        width: 38px;
-        height: 38px;
-        font-size: 1rem;
-        border-radius: 10px;
+        width: 34px;
+        height: 34px;
+        font-size: 0.95rem;
+        border-radius: 8px;
     }
     .pillar-badge {
         font-size: 0.68rem;
         padding: 2px 7px;
     }
     .pillar-title {
-        font-size: 1.1rem;
-        margin-bottom: 6px;
+        font-size: 1rem;
+        margin-bottom: 4px;
     }
     .pillar-description {
-        font-size: 0.84rem;
-        line-height: 1.5;
+        font-size: 0.8rem;
+        line-height: 1.45;
     }
 }
