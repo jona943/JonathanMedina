@@ -26,14 +26,16 @@ export const ExperienceModal = ({ item, onClose }) => {
         {item.image && (
           <div className="modal-image-header">
             <img src={item.image} alt={item.alt || item.title} className="modal-full-img" />
+          </div>
+        )}
+
+        <div className="modal-body">
+          <div className="modal-header-meta">
             <span className={`modal-badge ${isHackathon ? 'hackathon' : 'work'}`}>
               <i className={isHackathon ? 'fas fa-trophy' : 'fas fa-briefcase'}></i>
               {isHackathon ? 'Hackathon' : 'Experiencia Laboral'}
             </span>
           </div>
-        )}
-
-        <div className="modal-body">
           <h2 className="modal-title">{item.title}</h2>
           <h4 className="modal-role">{item.role}</h4>
 

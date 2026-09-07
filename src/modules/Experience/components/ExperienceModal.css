@@ -80,30 +80,33 @@
     border-radius: 10px; /* Redondeo leve en la imagen */
 }
 
-.modal-badge {
-    position: absolute;
-    bottom: 12px;
-    left: 20px;
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 700;
+.modal-header-meta {
     display: flex;
     align-items: center;
+    margin-bottom: 10px;
+}
+
+.modal-badge {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
     gap: 6px;
-    backdrop-filter: blur(8px);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 700;
 }
 
 .modal-badge.hackathon {
-    background: rgba(255, 184, 0, 0.3);
+    background: rgba(255, 184, 0, 0.15);
     color: #ffc107;
-    border: 1px solid rgba(255, 184, 0, 0.5);
+    border: 1px solid rgba(255, 184, 0, 0.4);
 }
 
 .modal-badge.work {
-    background: rgba(0, 199, 177, 0.3);
+    background: rgba(0, 199, 177, 0.15);
     color: var(--accent);
-    border: 1px solid rgba(0, 199, 177, 0.5);
+    border: 1px solid rgba(0, 199, 177, 0.4);
 }
 
 .modal-body {
@@ -180,5 +183,28 @@
 @keyframes slideUpModal {
     from { transform: translateY(20px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
+}
+
+@media (max-width: 600px) {
+    .experience-modal-overlay {
+        padding: 12px;
+    }
+    .experience-modal-content {
+        max-height: 85vh;
+        max-height: 85dvh;
+    }
+    .modal-body {
+        padding: 16px;
+    }
+    .modal-title {
+        font-size: 1.25rem;
+    }
+    .modal-role {
+        font-size: 0.88rem;
+    }
+    .modal-highlight-item {
+        font-size: 0.86rem;
+        line-height: 1.5;
+    }
 }
 

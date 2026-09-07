@@ -194,12 +194,41 @@
     color: var(--accent);
 }
 
-.experience-card-item:hover .cta-link {
-    gap: 12px;
-}
-
-.cta-icon {
-    font-size: 0.8rem;
+@media (max-width: 600px) {
+    .card-header-top {
+        padding: 12px 10px 4px 10px;
+        gap: 5px;
+    }
+    .card-main-title {
+        font-size: 1.15rem;
+    }
+    .card-sub-role {
+        font-size: 0.85rem;
+    }
+    .card-type-tag {
+        font-size: 0.7rem;
+        padding: 3px 9px;
+    }
+    .card-media-wrapper {
+        margin: 2px 0;
+    }
+    .card-media-wrapper.media-hackathon {
+        max-height: 265px;
+        height: 255px;
+        padding: 0 2px;
+    }
+    .card-media-wrapper.media-work {
+        max-height: 220px;
+        height: 210px;
+        padding: 0 2px;
+    }
+    .card-cta-footer {
+        padding: 20px 12px;
+        margin-top: auto;
+    }
+    .cta-link {
+        font-size: 0.85rem;
+    }
 }
 
 

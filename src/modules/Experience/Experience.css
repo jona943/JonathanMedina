@@ -121,18 +121,45 @@
     }
 }
 
+.experience-section {
+    padding: 70px 0;
+}
+
+.experience-header-wrapper {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+    .experience-section {
+        padding: 30px 0;
+    }
+    .experience-header-wrapper {
+        margin-bottom: 20px;
+    }
+    .section-subtitle {
+        font-size: 0.90rem;
+        margin-top: 6px;
+    }
+}
+
 @media (max-width: 600px) {
     .carousel-container {
-        padding: 0 10px;
+        padding: 0;
     }
 
     .carousel-btn {
         display: none;
     }
 
+    .experience-carousel {
+        padding: 40px 0;
+        gap: 14px;
+    }
+
     .carousel-slide {
-        flex: 0 0 85%;
-        width: 85%;
+        flex: 0 0 95%;
+        width: 95%;
         min-width: 0;
     }
 }
